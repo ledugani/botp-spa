@@ -7,14 +7,9 @@ import AboutPage from "./pages/about";
 import MerchPage from "./pages/merch";
 
 export default function App() {
-	const [counter, setCounter] = useState(0);
-	useEffect(() => {
-		setCounter((prev) => prev + 1);
-	}, []);
-
 	return (
 			<BrowserRouter>
-				<Layout onChange={() => setCounter((prev) => prev +1)}>
+				<Layout>
 					<Switch>
 						<Route exact path='/'>
 							<Homepage />
