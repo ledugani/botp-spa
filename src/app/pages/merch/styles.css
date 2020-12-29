@@ -1,0 +1,17 @@
+.colors {
+	margin: 1rem;
+}
+
+.colors .color {
+	padding: .75rem 1.5rem;
+	margin: .75rem;
+	border: 2px solid black;
+	background-color: #fafafa;
+	border-radius: 5px;
+}
+
+.colors .color.selected{
+	border: 1px solid green;
+	background-color: greenyellow;
+	border-radius: 5px;
+}
