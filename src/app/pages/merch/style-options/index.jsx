@@ -6,11 +6,11 @@ export default function StyleOptions({
 	setSelectedStyle
 }) {
 	return (
-		<div className="colors">
+		<div className='styles options'>
 				available styles:
 				{styles.map((style) => (
 					<span
-						className={`style ${
+						className={`option ${
 							selectedStyle === style ? 'selected' : null
 						}`}
 						onClick={() => setSelectedStyle(style)}>

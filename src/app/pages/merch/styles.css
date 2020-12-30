@@ -1,8 +1,8 @@
-.colors {
-	margin: 1rem;
+.options {
+	margin: 2rem;
 }
 
-.colors .color {
+.options .option {
 	padding: .75rem 1.5rem;
 	margin: .75rem;
 	border: 1px solid black;
@@ -10,7 +10,7 @@
 	border-radius: 5px;
 }
 
-.colors .color.selected{
+.options .option.selected{
 	border: 2px solid green;
 	background-color: greenyellow;
 	border-radius: 5px;

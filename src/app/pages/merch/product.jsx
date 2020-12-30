@@ -23,6 +23,10 @@ export default function Product({ name, image, sizes, styles, colors }) {
 				setSelectedStyle={setSelectedStyle}
 			/>
 
+			<div className="price">
+				Price: {selectedStyle.price.toFixed(2)}
+			</div>
+
 			<img
 				width={400}
 				src={selectedColor.image}
