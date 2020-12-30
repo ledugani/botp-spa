@@ -2,17 +2,17 @@
 	{
 		"name": "Magic Blood Logo T-Shirt",
 		"sizes": [{
-			"name": "Small",
+			"name": "1-pack",
 			"price": 1
 		}, {
-			"name": "Medium",
+			"name": "2-pack",
 			"price": 2
 		}],
 		"styles": [{
-			"name": "Short-Sleeved",
+			"name": "Short-sleeved",
 			"price": 54.99
 		}, {
-			"name": "Long-Sleeved",
+			"name": "Long-sleeved",
 			"price": 65.99
 		}],
 		"colors": [{
