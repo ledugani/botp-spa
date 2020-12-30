@@ -12,6 +12,29 @@
 	border: 1px solid blue;
 	padding: 1rem;
 	max-width: 280px;
+	position: relative;
+}
+
+.products .product.hover {
+	background-color: greenyellow;
+	border: 1px solid rgb(255, 99, 99);
+}
+
+.products .product .add-to-cart {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	top: calc(50% - 100px / 2);
+	left: calc(50% - 100px / 2);
+	font-size: 4rem;
+	padding: 1rem;
+	border: 1px solid grey;
+	background-color: white;
+}
+
+.products .product .add-to-cart div {
+	font-size: .8rem;
 }
 
 .products .tags .tag {
