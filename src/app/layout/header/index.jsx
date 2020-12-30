@@ -6,14 +6,20 @@ export default function Header({ onChange }) {
 	return <div className="__dml header">
 		<ul>
 			<li>
-				<Link to='/' onClick={onChange}>
+				<Link to='/'>
 					Home
 				</Link>
 			</li>
 
 			<li>
-				<Link to='/about' onClick={onChange}>
+				<Link to='/about'>
 					About
+				</Link>
+			</li>
+
+			<li>
+				<Link to='/merch'>
+					Merch
 				</Link>
 			</li>
 		</ul>

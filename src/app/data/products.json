@@ -1,0 +1,26 @@
+[
+	{
+		"name": "Magic Blood Logo T-Shirt",
+		"sizes": [{
+			"name": "Small",
+			"price": 1
+		}, {
+			"name": "Medium",
+			"price": 2
+		}],
+		"styles": [{
+			"name": "Short-Sleeved",
+			"price": 54.99
+		}, {
+			"name": "Long-Sleeved",
+			"price": 65.99
+		}],
+		"colors": [{
+			"name": "Black",
+			"image": "https://images.squarespace-cdn.com/content/v1/5dd6e3636723275669e4f80b/1605266298723-BO1TYMQDRGYKKKW2I3B9/ke17ZwdGBToddI8pDm48kG75vGGUnbjxb0ys57TSqtdZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI0NHdb6BD-OZ4mivNxB8dlt625bG4demkdTOPaAFURWMKMshLAGzx4R3EDFOm1kBS/MAGIC%2BLOGO%2BBLACK%2BFRONT.jpg?format=1000w"
+		}, {
+			"name": "Brown",
+			"image": "https://images.squarespace-cdn.com/content/v1/5dd6e3636723275669e4f80b/1605339811797-250YZOKPI0LADWYHUBR6/ke17ZwdGBToddI8pDm48kG75vGGUnbjxb0ys57TSqtdZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI0NHdb6BD-OZ4mivNxB8dlt625bG4demkdTOPaAFURWMKMshLAGzx4R3EDFOm1kBS/MAGIC%2BLOGO%2BBROWN%2BFRONT.jpg?format=1000w"
+		}]
+	}
+]
