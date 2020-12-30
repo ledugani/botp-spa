@@ -3,6 +3,8 @@ export function addToCart(product) {
 }
 
 export function getCartItems() {
+	const data = localStorage.getItem('cart');
+	debugger;
 }
 
 export function removeFromCart() {}
