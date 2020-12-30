@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ColorOptions from './color-options';
 import './styles.css';
 
 export default function Product({ name, image, sizes, styles, colors }) {
@@ -6,18 +7,12 @@ export default function Product({ name, image, sizes, styles, colors }) {
 	return (
 		<div className="product">
 			<div className="name">{name}</div>
-			<div className="colors">
-				available in:
-				{colors.map((color) => (
-					<span
-						className={`color ${
-							selectedColor === color ? 'selected' : null
-						}`}
-						onClick={() => setSelectedColor(color)}>
-						{color.name}
-					</span>
-				))}
-			</div>
+
+			<ColorOptions
+				colors={colors}
+				selectedColor={selectedColor}
+				setSelectedColor={setSelectedColor}
+			/>
 
 			<img
 				width={400}
