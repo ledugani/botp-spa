@@ -1,49 +1,31 @@
 import React, { useState } from 'react';
 
-import Options from './options';
-
 import './styles.css';
 
-export default function Product({ name, image, sizes, styles, colors }) {
-	const [selectedColor, setSelectedColor] = useState(colors[0]);
-	const [selectedStyle, setSelectedStyle] = useState(styles[0]);
-	const [selectedSize, setSelectedSize] = useState(sizes[0]);
-
-
+export default function Product({
+	name,
+	imageUrl,
+	price,
+	tags,
+	colors
+}) {
 	return (
 		<div className="product">
+			<img width={300} src={imageUrl} alt={name} />
 			<div className="name">{name}</div>
+			<div className="price">Price: {price}</div>
 
-			<Options
-				label='Available Sizes: '
-				options={sizes}
-				selectedOption={selectedSize}
-				setSelectedOption={setSelectedSize}
-			/>
-
-			<Options
-				label='Available Colors: '
-				options={colors}
-				selectedOption={selectedColor}
-				setSelectedOption={setSelectedColor}
-			/>
-
-			<Options
-				label='Available Styles: '
-				options={styles}
-				sel0ectedOption={selectedStyle}
-				setSelectedOption={setSelectedStyle}
-			/>
-
-			<div className="price">
-				Price: {(selectedStyle.price * selectedSize.price).toFixed(2)}
+			<div className="tags">
+				Tags: {tags.map((tag) => (
+					<span className="tag">{tag}</span>
+				))}
 			</div>
 
-			<img
-				width={400}
-				src={selectedColor.image}
-				alt={name}
-			/>
+			<div className="tags">
+				Available in: {colors.map((color) => (
+					<span className="tag">{color}</span>
+				))}
+			</div>
 		</div>
 	);
 }
