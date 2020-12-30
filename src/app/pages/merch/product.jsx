@@ -1,30 +1,42 @@
 import React, { useState } from 'react';
-import ColorOptions from './color-options';
-import StyleOptions from './style-options';
+
+import Options from './options';
+
 import './styles.css';
 
 export default function Product({ name, image, sizes, styles, colors }) {
 	const [selectedColor, setSelectedColor] = useState(colors[0]);
 	const [selectedStyle, setSelectedStyle] = useState(styles[0]);
+	const [selectedSize, setSelectedSize] = useState(sizes[0]);
+
 
 	return (
 		<div className="product">
 			<div className="name">{name}</div>
 
-			<ColorOptions
-				colors={colors}
-				selectedColor={selectedColor}
-				setSelectedColor={setSelectedColor}
+			<Options
+				label='Available Sizes: '
+				options={sizes}
+				selectedOption={selectedSize}
+				setSelectedOption={setSelectedSize}
 			/>
 
-			<StyleOptions
-				styles={styles}
-				selectedStyle={selectedStyle}
-				setSelectedStyle={setSelectedStyle}
+			<Options
+				label='Available Colors: '
+				options={colors}
+				selectedOption={selectedColor}
+				setSelectedOption={setSelectedColor}
+			/>
+
+			<Options
+				label='Available Styles: '
+				options={styles}
+				sel0ectedOption={selectedStyle}
+				setSelectedOption={setSelectedStyle}
 			/>
 
 			<div className="price">
-				Price: {selectedStyle.price.toFixed(2)}
+				Price: {(selectedStyle.price * selectedSize.price).toFixed(2)}
 			</div>
 
 			<img
