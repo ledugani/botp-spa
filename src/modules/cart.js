@@ -1,4 +1,5 @@
 export function addToCart(product) {
+	const cart = getCartItems();
 	localStorage.setItem('cart', JSON.stringify([product]));
 }
 
