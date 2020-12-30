@@ -1,0 +1,14 @@
+:root {
+	--accent-color: #f34545;
+	--base-color: rgb(61, 59, 59);
+	font-size: 16px;
+}
+
+* {
+	box-sizing: border-box;
+	color: var(--base-color);
+}
+
+a {
+	color: var(--accent-color);
+}

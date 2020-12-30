@@ -9,9 +9,14 @@ export default function Product({
 	tags,
 	colors
 }) {
+	const [hover, setHover] = useState(false);
 	return (
-		<div className="product">
-			<img width={300} src={imageUrl} alt={name} />
+		<div
+			className="product"
+			onMouseEnter={() => setHover(true)}
+			onMouseLeave={() => setHover(false)}>
+				{hover && 'hover'}
+			<img src={imageUrl} alt={name} />
 			<div className="name">{name}</div>
 			<div className="price">Price: {price}</div>
 

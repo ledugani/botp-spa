@@ -1,7 +1,17 @@
-.products {}
+.product img {
+	max-height: 300px;
+}
+
+.products {
+	display: flex;
+	flex-wrap: wrap;
+}
 
 .products .product {
-	margin: 2rem;
+	margin: 1rem;
+	border: 1px solid blue;
+	padding: 1rem;
+	max-width: 280px;
 }
 
 .products .tags .tag {

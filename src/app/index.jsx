@@ -6,6 +6,8 @@ import Homepage from "./pages/homepage";
 import AboutPage from "./pages/about";
 import MerchPage from "./pages/merch";
 
+import './styles.css';
+
 export default function App() {
 	return (
 			<BrowserRouter>
