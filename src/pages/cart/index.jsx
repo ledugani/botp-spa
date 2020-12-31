@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Seo from '../../app/seo';
 import cartContext from '../../app/cart-context';
+import { formatCurrency } from '../../modules/currency';
 
 function withQuantities (products) {
 	return products.reduce((acc, product) => {
@@ -42,7 +43,7 @@ export default function CartPage() {
 								<td>{product.name}</td>
 								<td>{product.price}</td>
 								<td>{product.qty}</td>
-								<td>{product.price * product.qty}</td>
+								<td>{ formatCurrency(product.price * product.qty) }</td>
 							</tr>)
 						)
 					}
