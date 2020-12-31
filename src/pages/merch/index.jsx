@@ -1,8 +1,8 @@
 import React from 'react';
-import Seo from '../../seo';
+import Seo from '../../app/seo';
 import Product from './product';
 
-import products from "../../data/products.json";
+import products from '../../data/products.json';
 
 export default function MerchPage({  }) {
 	return (
@@ -11,7 +11,7 @@ export default function MerchPage({  }) {
 			<h1>Merch</h1>
 			<div className="products">
 				{products.map((product) => (
-					<Product {...product} />
+					<Product key={product.id} {...product} />
 				))}
 			</div>
 		</>

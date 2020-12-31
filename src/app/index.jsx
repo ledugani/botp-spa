@@ -1,13 +1,13 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import cartContext from './cart-context';
 import useCart from '../hooks/use-cart';
 
-import Layout from "./layout";
-import Homepage from "./pages/homepage";
-import AboutPage from "./pages/about";
-import MerchPage from "./pages/merch";
-import CartPage from "./pages/cart";
+import Layout from './layout';
+import Homepage from '../pages/homepage';
+import AboutPage from '../pages/about';
+import MerchPage from '../pages/merch';
+import CartPage from '../pages/cart';
 
 import './styles.css';
 

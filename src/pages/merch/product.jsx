@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import cartContext from '../../cart-context';
+import cartContext from '../../app/cart-context';
 
 import './styles.css';
 
@@ -19,7 +19,6 @@ export default function Product({
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}
 		>
-			{ctx.cart.length}
 			{
 				hover &&
 				<div
