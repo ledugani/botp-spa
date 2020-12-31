@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import cartContext from './cart-context';
-import { getCartItems } from '../modules/cart';
+import useCart from '../hooks/use-cart';
 
 import Layout from "./layout";
 import Homepage from "./pages/homepage";
@@ -12,9 +12,12 @@ import CartPage from "./pages/cart";
 import './styles.css';
 
 export default function App() {
-
+	const { cart, addToCart } = useCart()
 	return (
-		<cartContext.Provider value={getCartItems()}>
+		<cartContext.Provider value={{
+			cart,
+			addToCart,
+		}}>
 			<BrowserRouter>
 				<Layout>
 					<Switch>

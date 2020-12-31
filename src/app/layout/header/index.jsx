@@ -27,7 +27,7 @@ export default function Header({ }) {
 			</li>
 
 			<li>
-				<Link to='/cart'>Cart:</Link> ({ctx.length})
+				<Link to='/cart'>Cart:</Link> ({ctx.cart.length})
 			</li>
 		</ul>
 	</div>

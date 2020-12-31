@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import useCart from '../../../hooks/use-cart';
+import React, { useState, useContext } from 'react';
+import cartContext from '../../cart-context';
 
 import './styles.css';
 
@@ -12,20 +12,20 @@ export default function Product({
 	colors
 }) {
 	const [hover, setHover] = useState(false);
-	const { cart, addToCart } = useCart();
+	const ctx = useContext(cartContext);
 	return (
 		<div
 			className={`product ${hover && 'hover'}`}
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}
 		>
-			{cart.length}
+			{ctx.cart.length}
 			{
 				hover &&
 				<div
 					className='add-to-cart'
 					onClick={() =>
-						addToCart({
+						ctx.addToCart({
 							id,
 							name,
 							price
