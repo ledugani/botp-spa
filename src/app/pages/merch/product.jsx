@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addToCart } from '../../../modules/cart';
+import useCart from '../../../hooks/use-cart';
 
 import './styles.css';
 
@@ -12,12 +12,14 @@ export default function Product({
 	colors
 }) {
 	const [hover, setHover] = useState(false);
+	const { cart, addToCart } = useCart();
 	return (
 		<div
 			className={`product ${hover && 'hover'}`}
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}
 		>
+			{cart.length}
 			{
 				hover &&
 				<div
