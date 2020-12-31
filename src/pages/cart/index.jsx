@@ -41,7 +41,7 @@ export default function CartPage() {
 						withQuantities(cart).map(product => (
 							<tr>
 								<td>{product.name}</td>
-								<td>{product.price}</td>
+								<td>${ product.price }</td>
 								<td>{product.qty}</td>
 								<td>{ formatCurrency(product.price * product.qty) }</td>
 							</tr>)
