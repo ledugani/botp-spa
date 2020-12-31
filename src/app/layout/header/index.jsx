@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { getCartItems } from '../../../modules/cart';
 import './styles.css';
 
-export default function Header({ onChange }) {
+export default function Header({  }) {
 	return <div className='__dml header'>
 		<ul>
 			<li>
@@ -25,7 +25,7 @@ export default function Header({ onChange }) {
 			</li>
 
 			<li>
-				<Link to='/cart'>Cart:</Link> ({JSON.parse(getCartItems()).length})
+				<Link to='/cart'>Cart:</Link> ({getCartItems().length})
 			</li>
 		</ul>
 	</div>

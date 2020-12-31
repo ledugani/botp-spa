@@ -11,8 +11,8 @@ export function addToCart(product) {
 }
 
 export function getCartItems() {
-	const items = localStorage.getItem('allItems');
-	console.dir(items);
+	const items = JSON.parse(localStorage.getItem('allItems'));
+	if(!items) return [];
 	return items;
 }
 
