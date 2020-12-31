@@ -25,7 +25,7 @@ export default function Header({ onChange }) {
 			</li>
 
 			<li>
-				<Link to='/cart'>Cart:</Link> ({getCartItems()})
+				<Link to='/cart'>Cart:</Link> ({JSON.parse(getCartItems()).length})
 			</li>
 		</ul>
 	</div>

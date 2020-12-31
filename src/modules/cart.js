@@ -11,7 +11,9 @@ export function addToCart(product) {
 }
 
 export function getCartItems() {
-	const data = localStorage.getItem('cart');
+	const items = localStorage.getItem('allItems');
+	console.dir(items);
+	return items;
 }
 
 export function removeFromCart() {}
