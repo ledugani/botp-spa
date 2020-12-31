@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { getCartItems } from '../../../modules/cart';
+import cartContext from '../../../modules/cart-context';
 import './styles.css';
 
-export default function Header({ }) {
+export default function Header({}) {
+	const ctx = useContext(cartContext);
 	return <div className='__dml header'>
 		<ul>
 			<li>
@@ -25,7 +26,7 @@ export default function Header({ }) {
 			</li>
 
 			<li>
-				<Link to='/cart'>Cart:</Link> ({getCartItems().length})
+				<Link to='/cart'>Cart:</Link> ({ctx})
 			</li>
 		</ul>
 	</div>

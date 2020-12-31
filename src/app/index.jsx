@@ -1,6 +1,8 @@
-import React, { createContext } from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import {getCartItems} from '../modules/cart'
+import cartContext from '../modules/cart-context';
+import { getCartItems } from '../modules/cart';
+// import useCart from '../hooks/use-cart';
 
 import Layout from "./layout";
 import Homepage from "./pages/homepage";
@@ -11,9 +13,9 @@ import CartPage from "./pages/cart";
 import './styles.css';
 
 export default function App() {
-	const cartContext = createContext(getCartItems());
+	// const {cart, addToCart} = useCart([]);
 	return (
-		<cartContext.Provider>
+		<cartContext.Provider value={getCartItems()}>
 			<BrowserRouter>
 				<Layout>
 					<Switch>
