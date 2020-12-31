@@ -42,7 +42,7 @@ export default function CartPage() {
 								<td>{product.name}</td>
 								<td>{product.price}</td>
 								<td>{product.qty}</td>
-								<td></td>
+								<td>{product.price * product.qty}</td>
 							</tr>)
 						)
 					}
