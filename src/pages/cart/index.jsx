@@ -6,11 +6,14 @@ function withQuantities (products) {
 	return products.reduce((acc, product) => {
 		const existing = acc.find((p) => product.id === p.id);
 		if (existing) {
-			acc.map((p) =>
-				p.id === product.id ? { ...p, qty: p.qty + 1 } : p
-			);
+			acc.slice()
+			return [
+				...acc.map((p) =>
+					p.id === product.id ? { ...p, qty: p.qty + 1 } : p
+				),
+			];
 		} else {
-			acc.push(product)
+			acc.push({ ...product, qty: 1 });
 		}
 		return acc;
 	}, []);
@@ -38,7 +41,7 @@ export default function CartPage() {
 							<tr>
 								<td>{product.name}</td>
 								<td>{product.price}</td>
-								<td>{0}</td>
+								<td>{product.qty}</td>
 								<td></td>
 							</tr>)
 						)
