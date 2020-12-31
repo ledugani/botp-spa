@@ -1,26 +1,30 @@
 [
 	{
-		"name": "Magic Blood Logo T-Shirt",
-		"sizes": [{
-			"name": "1-pack",
-			"price": 1
-		}, {
-			"name": "2-pack",
-			"price": 2
-		}],
-		"styles": [{
-			"name": "Short-sleeved",
-			"price": 54.99
-		}, {
-			"name": "Long-sleeved",
-			"price": 65.99
-		}],
-		"colors": [{
-			"name": "Black",
-			"image": "https://images.squarespace-cdn.com/content/v1/5dd6e3636723275669e4f80b/1605266298723-BO1TYMQDRGYKKKW2I3B9/ke17ZwdGBToddI8pDm48kG75vGGUnbjxb0ys57TSqtdZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI0NHdb6BD-OZ4mivNxB8dlt625bG4demkdTOPaAFURWMKMshLAGzx4R3EDFOm1kBS/MAGIC%2BLOGO%2BBLACK%2BFRONT.jpg?format=1000w"
-		}, {
-			"name": "Brown",
-			"image": "https://images.squarespace-cdn.com/content/v1/5dd6e3636723275669e4f80b/1605339811797-250YZOKPI0LADWYHUBR6/ke17ZwdGBToddI8pDm48kG75vGGUnbjxb0ys57TSqtdZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI0NHdb6BD-OZ4mivNxB8dlt625bG4demkdTOPaAFURWMKMshLAGzx4R3EDFOm1kBS/MAGIC%2BLOGO%2BBROWN%2BFRONT.jpg?format=1000w"
-		}]
+		"id": "OPN-032",
+		"name": "Magic Blood Logo Shirt",
+		"price": "54.99",
+		"imageUrl": "https://images.squarespace-cdn.com/content/v1/5dd6e3636723275669e4f80b/1605266298723-BO1TYMQDRGYKKKW2I3B9/ke17ZwdGBToddI8pDm48kG75vGGUnbjxb0ys57TSqtdZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI0NHdb6BD-OZ4mivNxB8dlt625bG4demkdTOPaAFURWMKMshLAGzx4R3EDFOm1kBS/MAGIC%2BLOGO%2BBLACK%2BFRONT.jpg?format=1000w",
+		"description": "Skull Whether Channel Navy Long Sleeve T-shirt",
+		"tags": [
+			"clothing",
+			"shirts"
+		],
+		"colors": [
+			"navy"
+		]
+	},
+	{
+		"id": "OPN-028",
+		"name": "Skull Whether Channel Long Sleeve Shirt",
+		"price": "89.99",
+		"imageUrl": "https://images.squarespace-cdn.com/content/v1/5dd6e3636723275669e4f80b/1605267102492-L1V3I2TQ2LF4ZQO6CKFI/ke17ZwdGBToddI8pDm48kG75vGGUnbjxb0ys57TSqtdZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI0NHdb6BD-OZ4mivNxB8dlt625bG4demkdTOPaAFURWMKMshLAGzx4R3EDFOm1kBS/product7-1.jpg?format=500w",
+		"description": "Skull Whether Channel Ash Grey 14oz Heavy Weight Crewneck Sweatshirt",
+		"tags": [
+			"clothing",
+			"shirts"
+		],
+		"colors": [
+			"grey"
+		]
 	}
 ]

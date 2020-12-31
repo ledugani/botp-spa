@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { getCartItems } from '../../../modules/cart';
 import './styles.css';
 
-export default function Header({ onChange }) {
-	return <div className="__dml header">
+export default function Header({ }) {
+	return <div className='__dml header'>
 		<ul>
 			<li>
 				<Link to='/'>
@@ -21,6 +22,10 @@ export default function Header({ onChange }) {
 				<Link to='/merch'>
 					Merch
 				</Link>
+			</li>
+
+			<li>
+				<Link to='/cart'>Cart:</Link> ({getCartItems().length})
 			</li>
 		</ul>
 	</div>
