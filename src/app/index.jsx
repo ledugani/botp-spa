@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import cartContext from './cart/context';
+import CartContext from './cart/context';
 import useCart from '../hooks/use-cart';
 
 import Layout from './layout';
@@ -12,12 +12,8 @@ import CartPage from '../pages/cart';
 import './styles.css';
 
 export default function App() {
-	const { cartItems, addToCart } = useCart()
 	return (
-		<cartContext.Provider value={{
-			cartItems,
-			addToCart,
-		}}>
+		<CartContext.Provider value={useCart([])}>
 			<BrowserRouter>
 				<Layout>
 					<Switch>
@@ -39,6 +35,6 @@ export default function App() {
 					</Switch>
 				</Layout>
 			</BrowserRouter>
-		</cartContext.Provider>
+		</CartContext.Provider>
 	);
 }

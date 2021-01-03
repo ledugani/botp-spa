@@ -16,7 +16,11 @@ export default function useCart() {
 	}
 
 	function changeQty(product, qty) {
-		setCartItems(prev => [...prev, product])
+		setCartItems((prev) => [
+			...prev.map((item) =>
+				item.id === product.id ? { ...item, qty } : item,
+			)
+		]);
 	}
 
 	return {
