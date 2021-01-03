@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import cartContext from '../../cart-context';
+import cartContext from '../../cart/context';
 import { Link } from 'react-router-dom';
 
 import './styles.css';
 
 export default function Header({ }) {
-	const ctx = useContext(cartContext);
+	const { cartItems } = useContext(cartContext);
 	return <div className='__dml header'>
 		<ul>
 			<li>
@@ -27,7 +27,11 @@ export default function Header({ }) {
 			</li>
 
 			<li>
-				<Link to='/cart'>Cart:</Link> ({ctx.cart.length})
+				<Link to='/cart'>Cart:</Link> ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
+			</li>
+
+			<li>
+				<Link to='/checkout'>Checkout</Link>
 			</li>
 		</ul>
 	</div>

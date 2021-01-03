@@ -7,7 +7,9 @@ export default function Layout({ children }) {
 
 	return <div className="__dml container">
 		<Header />
-			{children}
+			<div className="page-content">
+				{children}
+			</div>
 		<Footer />
 	</div>;
 }
