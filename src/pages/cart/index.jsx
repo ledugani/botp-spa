@@ -3,23 +3,6 @@ import Seo from '../../app/seo';
 import cartContext from '../../app/cart/context';
 import { formatCurrency } from '../../modules/currency';
 
-function withQuantities (products) {
-	return products.reduce((acc, product) => {
-		const existing = acc.find((p) => product.id === p.id);
-		if (existing) {
-			acc.slice()
-			return [
-				...acc.map((p) =>
-					p.id === product.id ? { ...p, qty: p.qty + 1 } : p
-				),
-			];
-		} else {
-			acc.push({ ...product, qty: 1 });
-		}
-		return acc;
-	}, []);
-}
-
 export default function CartPage() {
 	const { cartItems } = useContext(cartContext);
 
@@ -41,7 +24,7 @@ export default function CartPage() {
 
 				<tbody>
 					{
-						withQuantities(cartItems).map(product => (
+						cartItems.map(product => (
 							<tr>
 								<td>{product.name}</td>
 								<td>${ product.price }</td>

@@ -27,7 +27,7 @@ export default function Header({ }) {
 			</li>
 
 			<li>
-				<Link to='/cart'>Cart:</Link> ({cartItems.length})
+				<Link to='/cart'>Cart:</Link> ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
 			</li>
 		</ul>
 	</div>
