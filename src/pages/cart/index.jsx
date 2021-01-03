@@ -4,7 +4,9 @@ import cartContext from '../../app/cart/context';
 import { formatCurrency } from '../../modules/currency';
 
 export default function CartPage() {
-	const { cartItems, changeQty  } = useContext(cartContext);
+	const { cartItems } = useContext(cartContext);
+
+	function handleChangeQty() {}
 
 	return (
 		<>
@@ -30,7 +32,7 @@ export default function CartPage() {
 									<input
 										type="text"
 										value={product.qty}
-										onChange={(e) => changeQty(product, e.target.value)}
+										onChange={handleChangeQty}
 									/>
 								</td>
 								<td>{ formatCurrency(product.price * product.qty) }</td>
