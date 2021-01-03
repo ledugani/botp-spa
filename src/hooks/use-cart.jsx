@@ -5,7 +5,7 @@ export default function useCart() {
 
 	function addToCart(product) {
 		setCartItems((prev) => {
-			const existing = cartItems.find((item) => item.id === product.id)
+			const existing = cartItems.find((item) => item.id === product.id);
 			return existing
 			? [...cartItems.map(item => item.id === product.id
 				? {...item, qty: item.qty + 1}
@@ -16,7 +16,13 @@ export default function useCart() {
 	}
 
 	function changeQty(product, qty) {
-		setCartItems(prev => [...prev, product])
+		setCartItems(prev => [
+			...prev.map((item) =>
+			item.id === product.id
+				? { ...item, qty }
+				: item,
+			),
+		]);
 	}
 
 	return {
