@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import cartContext from './cart-context';
+import cartContext from './cart/context';
 import useCart from '../hooks/use-cart';
 
 import Layout from './layout';
