@@ -6,7 +6,9 @@ import { formatCurrency } from '../../modules/currency';
 export default function CartPage() {
 	const { cartItems } = useContext(cartContext);
 
-	function handleChangeQty() {}
+	function handleChangeQty(e) {
+		console.dir(e.target.value);
+	}
 
 	return (
 		<>
