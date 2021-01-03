@@ -34,7 +34,7 @@ export default function CartPage() {
 									<input
 										type="text"
 										value={product.qty}
-										onChange={(e) => changeQty(product, e.target.value)}
+										onChange={(e) => changeQty(product, parseInt(e.target.value))}
 									/>
 								</td>
 								<td>{ formatCurrency(product.price * product.qty) }</td>
