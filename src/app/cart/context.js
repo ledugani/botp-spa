@@ -1,6 +1,5 @@
 import { createContext } from 'react';
-import { getCartItems } from '../../modules/cart';
 
-const ctx = createContext(getCartItems());
+const ctx = createContext([]);
 
 export default ctx;

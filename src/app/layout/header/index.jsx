@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 
 export default function Header({ }) {
-	const ctx = useContext(cartContext);
+	const { cartItems } = useContext(cartContext);
 	return <div className='__dml header'>
 		<ul>
 			<li>
@@ -27,7 +27,7 @@ export default function Header({ }) {
 			</li>
 
 			<li>
-				<Link to='/cart'>Cart:</Link> ({ctx.cart.length})
+				<Link to='/cart'>Cart:</Link> ({cartItems.length})
 			</li>
 		</ul>
 	</div>

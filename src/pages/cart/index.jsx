@@ -21,7 +21,7 @@ function withQuantities (products) {
 }
 
 export default function CartPage() {
-	const { cart } = useContext(cartContext);
+	const { cartItems } = useContext(cartContext);
 
 	function handleChangeQty() {}
 
@@ -41,7 +41,7 @@ export default function CartPage() {
 
 				<tbody>
 					{
-						withQuantities(cart).map(product => (
+						withQuantities(cartItems).map(product => (
 							<tr>
 								<td>{product.name}</td>
 								<td>${ product.price }</td>

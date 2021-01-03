@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
 export default function useCart() {
-	const [cart, setCart] = useState([]);
+	const [cartItems, setCartItems] = useState([]);
 
 	function addToCart(product) {
-		setCart(prev => [...prev, product])
+		setCartItems(prev => [...prev, product])
 	}
 
 	return {
-		cart,
+		cartItems,
 		addToCart
 	}
 }

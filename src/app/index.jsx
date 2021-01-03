@@ -12,10 +12,10 @@ import CartPage from '../pages/cart';
 import './styles.css';
 
 export default function App() {
-	const { cart, addToCart } = useCart()
+	const { cartItems, addToCart } = useCart()
 	return (
 		<cartContext.Provider value={{
-			cart,
+			cartItems,
 			addToCart,
 		}}>
 			<BrowserRouter>
