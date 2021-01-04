@@ -15,6 +15,7 @@ export default function Product({
 	const ctx = useContext(cartContext);
 	return (
 		<div
+			key={id}
 			className={`product ${hover && 'hover'}`}
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}

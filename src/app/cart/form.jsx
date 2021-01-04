@@ -6,7 +6,7 @@ export default function CheckoutForm() {
 	const elements = useElements();
 
 	async function handleSubmit(e) {
-		e.preventDefault;
+		e.preventDefault();
 
 		const { error, paymentMethod } = await stripe.createPaymentMethod(
 			{
