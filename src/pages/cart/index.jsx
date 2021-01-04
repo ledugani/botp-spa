@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Seo from '../../app/seo';
 import Cart from '../../app/cart';
 
