@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './styles.css';
 
-export default function Header({ }) {
+export default function Header() {
 	const { cartItems } = useContext(cartContext);
 	return <div className='__dml header'>
 		<ul>

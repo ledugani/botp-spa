@@ -1,7 +1,7 @@
 import React from 'react';
 import Seo from '../../app/seo';
 
-export default function Homepage({  }) {
+export default function Homepage() {
 	return (
 		<>
 			<Seo title="Home" />

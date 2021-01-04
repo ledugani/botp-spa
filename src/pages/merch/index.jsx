@@ -4,7 +4,7 @@ import Product from './product';
 
 import products from '../../data/products.json';
 
-export default function MerchPage({  }) {
+export default function MerchPage() {
 	return (
 		<>
 			<Seo title="Merch" />
