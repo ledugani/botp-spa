@@ -8,7 +8,6 @@ import Homepage from '../pages/homepage';
 import AboutPage from '../pages/about';
 import MerchPage from '../pages/merch';
 import CartPage from '../pages/cart';
-import CheckoutPage from '../pages/checkout';
 
 import './styles.css';
 
@@ -32,10 +31,6 @@ export default function App() {
 
 						<Route path='/cart'>
 							<CartPage />
-						</Route>
-
-						<Route path='/checkout'>
-							<CheckoutPage />
 						</Route>
 					</Switch>
 				</Layout>
