@@ -1,0 +1,35 @@
+[
+	{
+		"id": "AwfNevXz",
+		"img": "https://media.pitchfork.com/photos/5ebb18b3e5423e84f420e98e/1:1/w_320/Set%20My%20Heart%20on%20Fire%20Immediately_Perfume%20Genius.jpg",
+		"song": "On the Floor",
+		"album": "Set My Heart On Fire Immediately",
+		"artist": "Perfume Genius",
+		"release": "2020",
+		"apple": "https://music.apple.com/us/album/on-the-floor/1498608837?i=1498609152",
+		"spotify": "https://open.spotify.com/track/05HElY3EVth4SMuOJOGusl?si=92mWwgTWRSGfVLdiJXGwZA",
+		"youtube": "https://youtu.be/ln4S83JeY2Y"
+	},
+	{
+		"id": "vRmFKuBW",
+		"img": "https://media.pitchfork.com/photos/5ede7a73dad4216f71c678ee/1:1/w_320/Your%20Hero%20Is%20Not%20Dead_Westerman.jpg",
+		"song": "Confirmation (SSBD)",
+		"album": "Your Hero Is Not Dead",
+		"artist": "Westerman",
+		"release": "2020",
+		"apple": "https://music.apple.com/us/album/confirmation-ssbd/1499339235?i=1499339247",
+		"spotify": "https://open.spotify.com/track/3Pqy5RRW33bhxYXN0ZZNXG?si=f7W0eHrASxKUZOgd7Ndkkw",
+		"youtube": "https://youtu.be/Ch1lNNwwa90"
+	},
+	{
+		"id": "XtnsY7oj",
+		"img": "https://m.media-amazon.com/images/I/91ZolDQn85L._SS500_.jpg",
+		"song": "Tell You Something",
+		"album": "Tell You Something - Single",
+		"artist": "Sports",
+		"release": "2020",
+		"apple": "https://music.apple.com/us/album/tell-you-something-single/1511967773",
+		"spotify": "https://open.spotify.com/track/1o5veUbUGcygmJOoTmkaZm?si=xVqE_8IwQp6bV78aLvztwQ",
+		"youtube": "https://youtu.be/nLu-HEZjwE0"
+	}
+]
