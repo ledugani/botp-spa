@@ -31,5 +31,27 @@
 		"apple": "https://music.apple.com/us/album/tell-you-something-single/1511967773",
 		"spotify": "https://open.spotify.com/track/1o5veUbUGcygmJOoTmkaZm?si=xVqE_8IwQp6bV78aLvztwQ",
 		"youtube": "https://youtu.be/nLu-HEZjwE0"
+	},
+	{
+		"id": "ZzdTd6Vk",
+		"img": "https://static.stereogum.com/uploads/2020/10/porches-i-miss-that-1602012192-300x300.jpeg",
+		"song": "I Miss That",
+		"album": "I Miss That - Single",
+		"artist": "Porches",
+		"release": "2020",
+		"apple": "https://music.apple.com/us/album/i-miss-that-single/1533657136",
+		"spotify": "https://open.spotify.com/album/4MuCtbcpIOpHNGiD8Vd23o?si=vPup5xHGRM2rfVC3qXKzOg",
+		"youtube": "https://youtu.be/cTQE0_iyeR8"
+	},
+	{
+		"id": "bf9aBJQd",
+		"img": "https://images.genius.com/86e0728dd9f146d365a1036d76c00d3b.1000x1000x1.jpg",
+		"song": "Ordinary Guy (feat. The Mattson 2)",
+		"album": "Ordinary Guy (feat. The Mattson 2) - Single",
+		"artist": "Toro y Moi",
+		"release": "2020",
+		"apple": "https://music.apple.com/us/album/ordinary-guy-feat-the-mattson-2-single/1518662095",
+		"spotify": "https://open.spotify.com/track/3NXLWgZATF6TFYP70dEfcA?si=fW7--52LTZee2tpKQgr51A",
+		"youtube": "https://youtu.be/gZFYCjWk-1Q"
 	}
 ]
