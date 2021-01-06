@@ -1,5 +1,6 @@
 .song-card {
 	margin: 1rem;
+	display: inline-block;
 }
 
 .song-details {

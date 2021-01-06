@@ -1,4 +1,5 @@
-.songs {
-	display: flex;
-	flex-wrap: wrap;
+.songs-container {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
 }

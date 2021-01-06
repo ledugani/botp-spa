@@ -12,7 +12,7 @@ export default function Homepage() {
 			<Seo title="Home" />
 			<h1 className="heading">Welcome to Bottom of the Pile</h1>
 			<p>Lorem ipsum dolor, site amet consectetur adipisicing.</p>
-			<div className="songs">
+			<div className="songs-container">
 				{songs.map((song) => (
 					<Bnt key={song.id} {...song} />
 				))}
