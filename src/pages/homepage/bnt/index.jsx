@@ -15,7 +15,12 @@ export default function Bnt({
 	return (
 		<>
 			<div className="song-card">
-				<img src={img} alt="album cover" width={200} />
+				<img
+					src={img}
+					alt="album cover"
+					className="album-cover"
+					width={250}
+				/>
 				<div className="song-details">
 					<h3>{song}</h3>
 					<h4>{artist}</h4>

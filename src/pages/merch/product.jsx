@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import cartContext from '../../app/cart/context';
 
-import './styles.css';
+// import './styles.css';
 
 export default function Product({
 	id,
