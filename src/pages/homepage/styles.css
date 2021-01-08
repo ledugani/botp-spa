@@ -1,9 +1,6 @@
 .songs-container {
-	overflow-x: scroll;
-	overflow-y: hidden;
-	white-space: nowrap;
-}
-
-.songs-container::-webkit-scrollbar {
-	display: none;
+	max-height: 80vh;
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
 }

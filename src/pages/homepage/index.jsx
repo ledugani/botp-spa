@@ -1,58 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Seo from '../../app/seo';
-import Tracks from './tracks';
-import { Credentials } from '../../spotify/Credentials';
-
-//import Bnt from './bnt';
-//import songs from '../../data/bnt.json';
-import axios from 'axios';
+import Tracks from './tracks/tracks';
 
 import './styles.css';
 
 export default function Homepage() {
 
-	const spotify = Credentials();
-
-	const [tracks, setTracks] = useState([]);
-
-	useEffect(() => {
-
-		// replace this string with the Spotify ID of the playlist
-		const playlist_id = `40anMtgzQoKGiqvz7GQcFP`;
-
-		axios(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks?market=ES`, {
-			method: 'GET',
-			headers: {
-				'Accept' :'application/json',
-				'Content-Type' :'application/json',
-				'Authorization' : 'Bearer ' + spotify.OAuthStr
-			}
-		})
-		.then(tracksResponse => {
-			setTracks({
-				listOfTracksFromAPI: tracksResponse.data.items
-			})
-		});
-
-	}, []);
-
-
 	return (
 		<>
 			<Seo title="Home" />
 			<h1 className="heading">Welcome to Bottom of the Pile</h1>
-			<p>Lorem ipsum dolor, site amet consectetur adipisicing.</p>
-			<div className="songs-container">
-				{
-					console.log(tracks.listOfTracksFromAPI),
-					tracks.listOfTracksFromAPI.map((details) => {
-						console.log(details);
+			<p>
+				Bottom of the Pile is a music discovery platform,
+				digital art gallery and shoppe developed by T.Dugan.
+			</p>
 
-						return <div>
-							{details.track.album.artists[0].name}
-						</div>
-					})
-				}
+			{/* Best New Tracks */}
+			<div className="best-new-tracks">
+				<Tracks />
 			</div>
 		</>
 	);
