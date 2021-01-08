@@ -10,7 +10,10 @@ export default function Homepage() {
 		<>
 			<Seo title="Home" />
 			<h1 className="heading">Welcome to Bottom of the Pile</h1>
-			<p>Lorem ipsum dolor, site amet consectetur adipisicing.</p>
+			<p>
+				Bottom of the Pile is a music discovery platform,
+				digital art gallery and shoppe developed by T.Dugan.
+			</p>
 
 			{/* Best New Tracks */}
 			<div className="best-new-tracks">
