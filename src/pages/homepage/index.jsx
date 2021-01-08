@@ -12,38 +12,25 @@ export default function Homepage() {
 
 	const spotify = Credentials();
 
-	const [token, setToken] = useState('');
 	const [tracks, setTracks] = useState([]);
 
 	useEffect(() => {
 
-		axios('https://accounts.spotify.com/api/token', {
-      headers: {
-        'Content-Type' : 'application/x-www-form-urlencoded',
-        'Authorization' : 'Basic ' + btoa(spotify.ClientId + ':' + spotify.ClientSecret)
-      },
-      data: 'grant_type=client_credentials',
-      method: 'POST'
-    })
-		.then(tokenResponse => {
-			console.log(tokenResponse.data.access_token);
-			setToken(tokenResponse.data.access_token);
+		// replace this string with the Spotify ID of the playlist
+		const playlist_id = `40anMtgzQoKGiqvz7GQcFP`;
 
-			// replace this string with the Spotify ID of the playlist
-			const playlist_id = `40anMtgzQoKGiqvz7GQcFP`;
-
-			axios(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks`, {
-				method: 'GET',
-				headers: {
-					'Authorization' : 'Bearer ' + token
-				}
+		axios(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks?market=ES`, {
+			method: 'GET',
+			headers: {
+				'Accept' :'application/json',
+				'Content-Type' :'application/json',
+				'Authorization' : 'Bearer ' + spotify.OAuthStr
+			}
+		})
+		.then(tracksResponse => {
+			setTracks({
+				listOfTracksFromAPI: tracksResponse.data.items
 			})
-			.then(tracksResponse => {
-				console.log(tracksResponse);
-				setTracks({
-					listOfTracksFromAPI: tracksResponse.data.items
-				})
-			});
 		});
 
 	}, []);
@@ -58,6 +45,9 @@ export default function Homepage() {
 				{/* {tracks.map((song) => (
 					<Bnt key={song.id} {...song} />
 				))} */}
+				{
+					console.log(tracks.listOfTracksFromAPI)
+				}
 			</div>
 		</>
 	);
