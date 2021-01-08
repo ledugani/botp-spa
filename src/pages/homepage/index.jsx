@@ -17,22 +17,35 @@ export default function Homepage() {
 
 	useEffect(() => {
 
-		// replace this string with the Spotify ID of the playlist
-		const playlist_id = `40anMtgzQoKGiqvz7GQcFP`;
-
-		axios(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks?market=ES`, {
-			method: 'GET',
+		axios(`https://accounts.spotify.com/api/token`, {
 			headers: {
-				'Accept' :'application/json',
-				'Content-Type' :'application/json',
-				'Authorization' : 'Bearer ' + spotify.OAuthStr
-			}
+				'Content-Type' : 'application/x-www-form-urlencoded',
+				'Authorization' : 'Basic ' + btoa(spotify.ClientId + ':' + spotify.ClientSecret)
+			},
+			data: 'grant_type=client_credentials',
+			method: 'POST'
+		}).then((response) => {
+			console.log(response);
 		})
-		.then(tracksResponse => {
-			setTracks({
-				listOfTracksFromAPI: tracksResponse.data.items
-			})
-		});
+		// .then(() => {
+		// 	// replace this string with the Spotify ID of the playlist
+		// 	const playlist_id = `40anMtgzQoKGiqvz7GQcFP`;
+
+		// 	axios(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks?market=ES`, {
+		// 		method: 'GET',
+		// 		headers: {
+		// 			'Accept' :'application/json',
+		// 			'Content-Type' :'application/json',
+		// 			'Authorization' : 'Bearer ' + spotify.OAuthStr
+		// 		}
+		// 	})
+		// 	.then(tracksResponse => {
+		// 		console.log(tracksResponse);
+		// 		setTracks({
+		// 			listOfTracksFromAPI: tracksResponse.data.items
+		// 		})
+		// 	});
+		// })
 
 	}, []);
 
@@ -43,7 +56,7 @@ export default function Homepage() {
 			<h1 className="heading">Welcome to Bottom of the Pile</h1>
 			<p>Lorem ipsum dolor, site amet consectetur adipisicing.</p>
 			<div className="songs-container">
-				{
+				{/* {
 					console.log(tracks.listOfTracksFromAPI),
 					tracks.listOfTracksFromAPI.map((details) => {
 						console.log(details);
@@ -52,7 +65,7 @@ export default function Homepage() {
 							{details.track.album.artists[0].name}
 						</div>
 					})
-				}
+				} */}
 			</div>
 		</>
 	);

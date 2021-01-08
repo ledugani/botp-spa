@@ -5,7 +5,7 @@ import { formatCurrency } from '../../modules/currency';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
-import CheckoutForm from './form';
+// import CheckoutForm from './form';
 import './styles.css';
 
 export default function Cart() {
@@ -65,7 +65,7 @@ export default function Cart() {
 					<>
 						<hr />
 						<Elements stripe={loadStripe('pk_test_51I5wwPHrM2yHNGgRL7wUPH3hqincdvKDcKWpgqQrYRxhlbbb9pnE3D2BovrdtdXXDtQhkRecK3HQmfvfzjDnapdW000Vo0VGcq')}>
-							<CheckoutForm />
+							{/* <CheckoutForm /> */}
 						</Elements>
 					</>
 				)
