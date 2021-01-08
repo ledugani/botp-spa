@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Seo from '../../app/seo';
-import Tracks from './tracks';
+import Track from './tracks/tracks';
 import { Credentials } from '../../spotify/Credentials';
 
 //import Bnt from './bnt';
@@ -25,7 +25,6 @@ export default function Homepage() {
 			data: 'grant_type=client_credentials',
 			method: 'POST'
 		}).then((response) => {
-			console.log(response.data.access_token);
 			// replace this string with the Spotify ID of the playlist
 			const playlist_id = `40anMtgzQoKGiqvz7GQcFP`;
 
@@ -38,7 +37,6 @@ export default function Homepage() {
 				}
 			})
 			.then(tracksResponse => {
-				console.log(tracksResponse);
 				setTracks({
 					listOfTracksFromAPI: tracksResponse.data.items
 				})
@@ -57,13 +55,12 @@ export default function Homepage() {
 				{
 					tracks && tracks.listOfTracksFromAPI
 					? tracks.listOfTracksFromAPI.map((details) => {
-						console.log(details);
-
 						return <div key={details.added_at}>
-							{details.track.album.artists[0].name}
+							{/* {details.track.album.artists[0].name} */}
+							<Track key={details.track.id} trackDetails={details} />
 						</div>
 					})
-					: "Not loaded yet"
+					: "Plz w8 while I render dis info thx"
 				}
 			</div>
 		</>
