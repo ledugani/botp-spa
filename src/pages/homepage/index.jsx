@@ -25,27 +25,25 @@ export default function Homepage() {
 			data: 'grant_type=client_credentials',
 			method: 'POST'
 		}).then((response) => {
-			console.log(response);
-		})
-		// .then(() => {
-		// 	// replace this string with the Spotify ID of the playlist
-		// 	const playlist_id = `40anMtgzQoKGiqvz7GQcFP`;
+			console.log(response.data.access_token);
+			// replace this string with the Spotify ID of the playlist
+			const playlist_id = `40anMtgzQoKGiqvz7GQcFP`;
 
-		// 	axios(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks?market=ES`, {
-		// 		method: 'GET',
-		// 		headers: {
-		// 			'Accept' :'application/json',
-		// 			'Content-Type' :'application/json',
-		// 			'Authorization' : 'Bearer ' + spotify.OAuthStr
-		// 		}
-		// 	})
-		// 	.then(tracksResponse => {
-		// 		console.log(tracksResponse);
-		// 		setTracks({
-		// 			listOfTracksFromAPI: tracksResponse.data.items
-		// 		})
-		// 	});
-		// })
+			axios(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks?market=ES`, {
+				method: 'GET',
+				headers: {
+					'Accept' :'application/json',
+					'Content-Type' :'application/json',
+					'Authorization' : 'Bearer ' + response.data.access_token
+				}
+			})
+			.then(tracksResponse => {
+				console.log(tracksResponse);
+				setTracks({
+					listOfTracksFromAPI: tracksResponse.data.items
+				})
+			});
+		})
 
 	}, []);
 
