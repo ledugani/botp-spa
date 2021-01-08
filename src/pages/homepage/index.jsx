@@ -54,16 +54,17 @@ export default function Homepage() {
 			<h1 className="heading">Welcome to Bottom of the Pile</h1>
 			<p>Lorem ipsum dolor, site amet consectetur adipisicing.</p>
 			<div className="songs-container">
-				{/* {
-					console.log(tracks.listOfTracksFromAPI),
-					tracks.listOfTracksFromAPI.map((details) => {
+				{
+					tracks && tracks.listOfTracksFromAPI
+					? tracks.listOfTracksFromAPI.map((details) => {
 						console.log(details);
 
-						return <div>
+						return <div key={details.added_at}>
 							{details.track.album.artists[0].name}
 						</div>
 					})
-				} */}
+					: "Not loaded yet"
+				}
 			</div>
 		</>
 	);
