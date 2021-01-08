@@ -4,7 +4,6 @@ import Track from './tracks/tracks';
 import { Credentials } from '../../spotify/Credentials';
 
 //import Bnt from './bnt';
-//import songs from '../../data/bnt.json';
 import axios from 'axios';
 
 import './styles.css';
