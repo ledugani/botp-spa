@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Seo from '../../app/seo';
+import Tracks from './tracks';
 import { Credentials } from '../../spotify/Credentials';
 
 //import Bnt from './bnt';
@@ -42,11 +43,15 @@ export default function Homepage() {
 			<h1 className="heading">Welcome to Bottom of the Pile</h1>
 			<p>Lorem ipsum dolor, site amet consectetur adipisicing.</p>
 			<div className="songs-container">
-				{/* {tracks.map((song) => (
-					<Bnt key={song.id} {...song} />
-				))} */}
 				{
-					console.log(tracks.listOfTracksFromAPI)
+					console.log(tracks.listOfTracksFromAPI),
+					tracks.listOfTracksFromAPI.map((details) => {
+						console.log(details);
+
+						return <div>
+							{details.track.album.artists[0].name}
+						</div>
+					})
 				}
 			</div>
 		</>
