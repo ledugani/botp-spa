@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.css';
 
 export default function Tracks({ trackDetails }) {
 
@@ -11,7 +12,7 @@ export default function Tracks({ trackDetails }) {
 			<div className="song-card">
 				<img
 					src={track.album.images[1].url}
-					alt="album cover"
+					alt={track.album.name + " album cover"}
 					className="album-cover"
 					width={250}
 				/>

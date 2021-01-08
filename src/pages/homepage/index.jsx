@@ -55,7 +55,6 @@ export default function Homepage() {
 					tracks && tracks.listOfTracksFromAPI
 					? tracks.listOfTracksFromAPI.map((details) => {
 						return <div key={details.added_at}>
-							{/* {details.track.album.artists[0].name} */}
 							<Track key={details.track.id} trackDetails={details} />
 						</div>
 					})

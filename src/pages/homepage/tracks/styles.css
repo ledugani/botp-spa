@@ -1,8 +1,8 @@
 .song-card {
 	margin: 1rem;
-	display: inline-block;
 	border: 1px solid black;
 	padding: 5px;
+	max-width: 282px;
 }
 
 .album-cover {
