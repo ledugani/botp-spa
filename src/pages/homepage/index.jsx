@@ -21,7 +21,7 @@ export default function Homepage() {
 
 			{/* Best New Tracks */}
 			<div className="best-new-tracks">
-				<h3>Best New Tracks</h3>
+				<h3 className="bnt">Best New Tracks</h3>
 
 				<Tracks />
 			</div>

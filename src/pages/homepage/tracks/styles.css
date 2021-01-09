@@ -3,12 +3,17 @@
 
 } */
 
+.sc-bwzfXH.gwZiig {
+	height: 530px;
+}
+
 .single-track {
 	border: 1px solid black;
 	margin: 1rem;
 	padding: 5px;
 	max-width: 282px;
 	height: 450px;
+	background-color:cadetblue;
 }
 
 .carousel-button {

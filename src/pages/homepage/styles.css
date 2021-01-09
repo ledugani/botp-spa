@@ -4,11 +4,15 @@
 	flex-wrap: nowrap;
 	overflow-x: auto;
 } */
+.bnt {
+	color: var(--accent-color);
+}
 
 .best-new-tracks {
 	background-color: rgb(36, 34, 34);
 	max-width: 90vw;
 	margin: 0 2vw;
+	text-align: center;
 }
 
 .botp-logo {
