@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
-
 import Track from './track';
 import { Credentials } from '../../../spotify/Credentials';
-
-//import Bnt from './bnt';
 import axios from 'axios';
-
+//import Bnt from './bnt';
 import './styles.css';
 
+import ItemsCarousel from 'react-items-carousel';
+
 export default function Tracks() {
+
+	const [activeItemIndex, setActiveItemIndex] = useState(0);
+  const chevronWidth = 40;
 
 	const spotify = Credentials();
 
@@ -46,15 +48,26 @@ export default function Tracks() {
 
 	return (
 		<div className="songs-container">
+			<ItemsCarousel
+        requestToChangeActive={setActiveItemIndex}
+        activeItemIndex={activeItemIndex}
+        numberOfCards={4}
+        gutter={0}
+        leftChevron={<button className='carousel-button'>{'<'}</button>}
+        rightChevron={<button className='carousel-button'>{'>'}</button>}
+        outsideChevron
+        chevronWidth={chevronWidth}
+      >
 			{
 				tracks && tracks.listOfTracksFromAPI
 				? tracks.listOfTracksFromAPI.map((details) => {
-					return <div key={details.added_at}>
+					return <div key={details.added_at} className="single-track">
 						<Track key={details.track.id} trackDetails={details} />
 					</div>
 				})
-				: "Plz w8 while I render dis thx"
+				: "Rendering..."
 			}
+			</ItemsCarousel>
 		</div>
 	);
 }

@@ -1,9 +1,17 @@
-.song-card {
+/* .song-card {
 	flex: 0 0 auto;
-	margin: 1rem;
+
+} */
+
+.single-track {
 	border: 1px solid black;
+	margin: 1rem;
 	padding: 5px;
 	max-width: 282px;
+}
+
+.carousel-button {
+	width: 50px;
 }
 
 .album-cover {

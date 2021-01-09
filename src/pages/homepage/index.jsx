@@ -2,7 +2,7 @@ import React from 'react';
 import Seo from '../../app/seo';
 import Tracks from './tracks/tracks';
 
-import './styles.css';
+//import './styles.css';
 
 export default function Homepage() {
 
