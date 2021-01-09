@@ -14,6 +14,14 @@
 	width: 50px;
 }
 
+.right-btn {
+	margin-left: -100px;
+}
+
+.left-btn {
+	margin-right: -100px;
+}
+
 .album-cover {
 	margin: 10px;
 }

@@ -53,10 +53,11 @@ export default function Tracks() {
         activeItemIndex={activeItemIndex}
         numberOfCards={4}
         gutter={0}
-        leftChevron={<button className='carousel-button'>{'<'}</button>}
-        rightChevron={<button className='carousel-button'>{'>'}</button>}
+        leftChevron={<button className='carousel-button left-btn'>{'<'}</button>}
+        rightChevron={<button className='carousel-button right-btn'>{'>'}</button>}
         outsideChevron
-        chevronWidth={chevronWidth}
+				chevronWidth={chevronWidth}
+				infiniteLoop={true}
       >
 			{
 				tracks && tracks.listOfTracksFromAPI
