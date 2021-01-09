@@ -1,6 +1,16 @@
-.songs-container {
+/* .songs-container {
 	max-height: 80vh;
 	display: flex;
 	flex-wrap: nowrap;
 	overflow-x: auto;
+} */
+
+.best-new-tracks {
+	background-color: rgb(36, 34, 34);
+	max-width: 90vw;
+	margin: 0 2vw;
+}
+
+.botp-logo {
+	width: 90vw;
 }
