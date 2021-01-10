@@ -18,11 +18,12 @@ export default function Track({ trackDetails }) {
 					width={150}
 				/>
 				<div className="song-details">
-					<h3>{track.name}</h3>
-					<h4>{track.artists[0].name}</h4>
-					<h4>{track.album.name}</h4>
-					<h5>{track.album.release_date}</h5>
+					<h3 className="track-title">{track.name}</h3>
+					<h4 className="track-artist">{track.artists[0].name}</h4>
+					<h4 className="track-album">{track.album.name}</h4>
+
 				</div>
+				<h5 className="track-release">{track.album.release_date}</h5>
 			</div>
 		</>
 	);

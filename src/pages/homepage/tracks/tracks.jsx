@@ -58,6 +58,7 @@ export default function Tracks() {
         outsideChevron
 				chevronWidth={chevronWidth}
 				infiniteLoop={true}
+				slidesToScroll={2}
       >
 			{
 				tracks && tracks.listOfTracksFromAPI
