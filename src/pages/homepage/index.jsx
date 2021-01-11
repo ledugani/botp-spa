@@ -1,7 +1,7 @@
 import React from 'react';
 import Seo from '../../app/seo';
 import Tracks from './tracks/tracks';
-import logo from '../img/spotify-botp-variant-cream.png';
+import logo from '../img/botp-top-2020-variant-cream-outline.svg';
 
 import './styles.css';
 

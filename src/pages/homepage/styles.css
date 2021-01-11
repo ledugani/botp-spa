@@ -4,6 +4,7 @@
 	flex-wrap: nowrap;
 	overflow-x: auto;
 } */
+
 .bnt {
 	color: var(--accent-color);
 }
@@ -17,4 +18,6 @@
 
 .botp-logo {
 	width: 90vw;
+	margin-top: -185px;
+	margin-bottom: -185px;
 }

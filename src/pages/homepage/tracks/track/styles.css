@@ -1,7 +1,12 @@
+.song-car {
+	padding: 10px;
+}
+
 .song-details {
 	display: flex;
   flex-direction: column;
 	justify-content: center;
+	padding: 5px;
 }
 
 .track-title {

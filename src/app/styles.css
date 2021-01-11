@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Windsor';
+  src: local('Windsor'), url(../fonts/Windsor-Bold.otf) format('otf');
+}
+
+@font-face {
+  font-family: 'Eckmann';
+  src: local('Eckmann'), url(../fonts/EckmannAntiqueDOT-Regular.otf) format('otf');
+}
+
 :root {
 	--accent-color: #af5d63;
 	--accent-color-2: #b47978;
@@ -7,8 +17,9 @@
 	--offset-color: #6b7d7d;
 
 	font-size: 16px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Windsor', 'Eckmann', sans-serif;
 	background-color: var(--background-color);
+	letter-spacing: 1px;
 }
 
 * {
