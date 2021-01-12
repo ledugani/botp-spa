@@ -1,4 +1,11 @@
 .footer {
 	height: 20px;
-	display: block;
+}
+
+.footer-text {
+	text-align: center;
+}
+
+.t-link {
+	padding: 0 5px;
 }

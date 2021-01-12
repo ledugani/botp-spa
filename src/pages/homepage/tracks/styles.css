@@ -44,3 +44,12 @@
 .song-details {
 	text-align: center;
 }
+
+.loading {
+	margin-left: 32vw;
+	margin-top: 25vh;
+}
+
+.loading-gif {
+	width: 20vw;
+}

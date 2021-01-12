@@ -3,8 +3,8 @@ import Track from './track';
 import { Credentials } from '../../../spotify/Credentials';
 import axios from 'axios';
 //import Bnt from './bnt';
+import loading from '../../img/specs.gif';
 import './styles.css';
-
 import ItemsCarousel from 'react-items-carousel';
 
 export default function Tracks() {
@@ -45,7 +45,7 @@ export default function Tracks() {
 	}, []);
 
 	return (
-		<div className="songs-container">
+		<>
 			<ItemsCarousel
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
@@ -77,9 +77,15 @@ export default function Tracks() {
 						<Track key={details.track.id} trackDetails={details} />
 					</div>
 				})
-				: "Rendering..."
+				: <div className="loading">
+						<img
+							src={loading}
+							className="loading-gif"
+						/>
+						Rendering...
+					</div>
 			}
 			</ItemsCarousel>
-		</div>
+		</>
 	);
 }
