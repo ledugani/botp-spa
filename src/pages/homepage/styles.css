@@ -5,7 +5,8 @@
 	overflow-x: auto;
 } */
 
-.bnt {
+.bnt-header {
+	padding-top: 25px;
 	color: var(--accent-color);
 }
 
@@ -20,4 +21,10 @@
 	width: 90vw;
 	margin-top: -185px;
 	margin-bottom: -185px;
+}
+
+.botp-intro {
+	text-align: center;
+	font-size: 20px;
+	padding: 100px 0;
 }

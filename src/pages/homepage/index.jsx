@@ -11,17 +11,19 @@ export default function Homepage() {
 		<>
 			<Seo title="Home" />
 
+			<h1 className="botp-heading">hello, welcome to</h1>
+
 			<img src={logo} alt="botp logo" className="botp-logo" />
 
-			<h1 className="heading">Welcome to Bottom of the Pile</h1>
-			<p>
-				Bottom of the Pile is a music discovery platform,
-				digital art gallery and shoppe developed by T.Dugan.
+			<p className="botp-intro">
+				a music discovery platform,
+				digital art gallery and shoppe developed by <a href="http://ledugani.com/" target="_blank">T.Dugan</a>
 			</p>
 
 			{/* Best New Tracks */}
 			<div className="best-new-tracks">
-				<h3 className="bnt">Best New Tracks</h3>
+
+				<h3 className="bnt-header">Best New Tracks</h3>
 
 				<Tracks />
 			</div>

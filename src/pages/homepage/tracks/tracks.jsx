@@ -9,12 +9,10 @@ import ItemsCarousel from 'react-items-carousel';
 
 export default function Tracks() {
 
-	const [activeItemIndex, setActiveItemIndex] = useState(0);
-  const chevronWidth = 40;
-
 	const spotify = Credentials();
 
 	const [tracks, setTracks] = useState([]);
+	const [activeItemIndex, setActiveItemIndex] = useState(0);
 
 	useEffect(() => {
 
@@ -53,10 +51,22 @@ export default function Tracks() {
         activeItemIndex={activeItemIndex}
         numberOfCards={4}
         gutter={0}
-        leftChevron={<button className='carousel-button left-btn'>{'<'}</button>}
-        rightChevron={<button className='carousel-button right-btn'>{'>'}</button>}
+        leftChevron={
+					<button
+						className='carousel-button left-btn'
+					>
+						{'<'}
+					</button>
+				}
+        rightChevron={
+					<button
+						className='carousel-button right-btn'
+					>
+						{'>'}
+					</button>
+				}
         outsideChevron
-				chevronWidth={chevronWidth}
+				chevronWidth={40}
 				infiniteLoop={true}
 				slidesToScroll={2}
       >
