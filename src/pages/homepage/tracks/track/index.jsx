@@ -17,7 +17,7 @@ export default function Track({ trackDetails }) {
 					src={track.album.images[1].url}
 					alt={track.album.name + " album cover"}
 					className="album-cover"
-					width={150}
+					width={ window.innerWidth > 375 ? 150 : 100}
 				/>
 				<div className={trackCharLength.length > 100 ? "song-details-lg" : "song-details"}>
 					<h3 className="track-title">{track.name}</h3>

@@ -34,3 +34,12 @@ a {
 table thead th {
 	text-align: left;
 }
+
+/* @media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+		.__dml .container {
+			max-width: 100vw;
+		}
+} */

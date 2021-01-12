@@ -1,8 +1,3 @@
-/* .song-card {
-	flex: 0 0 auto;
-
-} */
-
 .sc-bwzfXH.gwZiig {
 	height: 530px;
 }
@@ -28,14 +23,14 @@
 	outline: inherit;
 	font-size: 42px;
 }
-
+/*
 .right-btn {
 	margin-left: 0px;
 }
 
 .left-btn {
 	margin-right: 0px;
-}
+} */
 
 .album-cover {
 	margin: 10px;
@@ -52,4 +47,16 @@
 
 .loading-gif {
 	width: 20vw;
+}
+
+/* Responsive - iPhone X+ */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+		.items-carousel {
+			width: 100px;
+		}
 }

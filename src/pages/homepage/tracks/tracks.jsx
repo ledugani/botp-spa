@@ -47,9 +47,10 @@ export default function Tracks() {
 	return (
 		<>
 			<ItemsCarousel
+				className="items-carousel"
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
-        numberOfCards={4}
+        numberOfCards={ window.innerWidth > 375 ? 4 : 2 }
         gutter={0}
         leftChevron={
 					<button
@@ -66,7 +67,7 @@ export default function Tracks() {
 					</button>
 				}
         outsideChevron
-				chevronWidth={40}
+				chevronWidth={20}
 				infiniteLoop={true}
 				slidesToScroll={2}
       >
