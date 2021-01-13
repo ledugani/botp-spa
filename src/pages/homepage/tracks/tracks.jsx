@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-
 import Track from './track';
 import { Credentials } from '../../../spotify/Credentials';
-
-//import Bnt from './bnt';
 import axios from 'axios';
-
+//import Bnt from './bnt';
+import loading from '../../img/specs.gif';
 import './styles.css';
+import ItemsCarousel from 'react-items-carousel';
 
 export default function Tracks() {
 
 	const spotify = Credentials();
 
 	const [tracks, setTracks] = useState([]);
+	const [activeItemIndex, setActiveItemIndex] = useState(0);
 
 	useEffect(() => {
 
@@ -45,16 +45,48 @@ export default function Tracks() {
 	}, []);
 
 	return (
-		<div className="songs-container">
+		<>
+			<ItemsCarousel
+				className="items-carousel"
+        requestToChangeActive={setActiveItemIndex}
+        activeItemIndex={activeItemIndex}
+        numberOfCards={ window.innerWidth > 375 ? 4 : 2 }
+        gutter={0}
+        leftChevron={
+					<button
+						className='carousel-button left-btn'
+					>
+						{'<'}
+					</button>
+				}
+        rightChevron={
+					<button
+						className='carousel-button right-btn'
+					>
+						{'>'}
+					</button>
+				}
+        outsideChevron
+				chevronWidth={20}
+				infiniteLoop={true}
+				slidesToScroll={2}
+      >
 			{
 				tracks && tracks.listOfTracksFromAPI
 				? tracks.listOfTracksFromAPI.map((details) => {
-					return <div key={details.added_at}>
+					return <div key={details.added_at} className="single-track">
 						<Track key={details.track.id} trackDetails={details} />
 					</div>
 				})
-				: "Plz w8 while I render dis thx"
+				: <div className="loading">
+						<img
+							src={loading}
+							className="loading-gif"
+						/>
+						Rendering...
+					</div>
 			}
-		</div>
+			</ItemsCarousel>
+		</>
 	);
 }

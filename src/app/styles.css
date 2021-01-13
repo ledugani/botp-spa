@@ -1,8 +1,25 @@
+@font-face {
+  font-family: 'Windsor';
+  src: local('Windsor'), url(../fonts/Windsor-Bold.otf) format('otf');
+}
+
+@font-face {
+  font-family: 'Eckmann';
+  src: local('Eckmann'), url(../fonts/EckmannAntiqueDOT-Regular.otf) format('otf');
+}
+
 :root {
-	--accent-color: #f34545;
-	--base-color: rgb(61, 59, 59);
+	--primary-color: #af5d63;
+	--accent-color: #b47978;
+	--base-color: #F2E6C8;
+	--secondary-base: #d6cdb4;
+	--background-color: #1B1B1B;
+	--offset-color: #6b7d7d;
+
 	font-size: 16px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif, sans-serif;
+	background-color: var(--background-color);
+	letter-spacing: 1px;
 }
 
 * {
@@ -17,3 +34,12 @@ a {
 table thead th {
 	text-align: left;
 }
+
+/* @media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+		.__dml .container {
+			max-width: 100vw;
+		}
+} */

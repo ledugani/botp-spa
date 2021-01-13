@@ -5,9 +5,9 @@ import useCart from '../hooks/use-cart';
 
 import Layout from './layout';
 import Homepage from '../pages/homepage';
-import AboutPage from '../pages/about';
-import MerchPage from '../pages/merch';
-import CartPage from '../pages/cart';
+// import AboutPage from '../pages/about';
+// import MerchPage from '../pages/merch';
+// import CartPage from '../pages/cart';
 
 import './styles.css';
 
@@ -20,7 +20,7 @@ export default function App() {
 						<Route exact path='/'>
 							<Homepage />
 						</Route>
-
+{/*
 						<Route path='/about'>
 							<AboutPage />
 						</Route>
@@ -31,7 +31,7 @@ export default function App() {
 
 						<Route path='/cart'>
 							<CartPage />
-						</Route>
+						</Route> */}
 					</Switch>
 				</Layout>
 			</BrowserRouter>

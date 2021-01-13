@@ -1,10 +1,36 @@
-.song-card {
-	flex: 0 0 auto;
-	margin: 1rem;
+.sc-bwzfXH.gwZiig {
+	height: 530px;
+}
+
+.single-track {
 	border: 1px solid black;
+	margin: 1rem;
 	padding: 5px;
 	max-width: 282px;
+	height: 475px;
+	background-color: var(--offset-color);
+	border-radius: 5px;
 }
+
+.carousel-button {
+	width: 50px;
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+	font-size: 42px;
+}
+/*
+.right-btn {
+	margin-left: 0px;
+}
+
+.left-btn {
+	margin-right: 0px;
+} */
 
 .album-cover {
 	margin: 10px;
@@ -12,4 +38,25 @@
 
 .song-details {
 	text-align: center;
+}
+
+.loading {
+	margin-left: 32vw;
+	margin-top: 25vh;
+}
+
+.loading-gif {
+	width: 20vw;
+}
+
+/* Responsive - iPhone X+ */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+		.items-carousel {
+			width: 100px;
+		}
 }
