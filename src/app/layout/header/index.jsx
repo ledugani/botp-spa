@@ -15,6 +15,13 @@ export default function Header() {
 			</li>
 
 			<li>
+				<Link to='/login'>
+					Login
+				</Link>
+			</li>
+
+			{/*
+			<li>
 				<Link to='/about'>
 					About
 				</Link>
@@ -28,7 +35,7 @@ export default function Header() {
 
 			<li>
 				<Link to='/cart'>Cart:</Link> ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
-			</li>
+			</li> */}
 		</ul>
 	</div>
 }
