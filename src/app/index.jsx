@@ -12,20 +12,23 @@ import { Container } from 'react-bootstrap';
 // import CartPage from '../pages/cart';
 
 import './styles.css';
+import { AuthProvider } from './auth/Auth';
 
 export default function App() {
 	return (
-		<Container
-			className='d-flex align-items-center justify-content-center'
-			style={{ minHeight: '100vh' }}
-		>
-			<div
-				className='w-100'
-				style={{ maxWidth: '400px' }}
+		<AuthProvider>
+			<Container
+				className='d-flex align-items-center justify-content-center'
+				style={{ minHeight: '100vh' }}
 			>
-				<SignUp />
-			</div>
-		</Container>
+				<div
+					className='w-100'
+					style={{ maxWidth: '400px' }}
+				>
+					<SignUp />
+				</div>
+			</Container>
+		</AuthProvider>
 	)
 
 	// return (

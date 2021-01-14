@@ -9,8 +9,8 @@ const app = firebase.initializeApp({
 	messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
 	appId: process.env.REACT_APP_FIREBASE_APP_ID,
 	measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
-})
+});
 
-export const auth = app.auth()
+export const auth = app.auth();
 
-export default app
+export default app;
