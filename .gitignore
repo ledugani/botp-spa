@@ -2,6 +2,8 @@
 /src/data/
 /src/fonts
 /src/spotify
+/src/firebase.js
+.env
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
