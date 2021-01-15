@@ -7,6 +7,7 @@ import PrivateRoute from './private';
 
 import Dashboard from '../pages/dashboard';
 import Login from './auth/login';
+import ForgotPassword from './auth/pwreset';
 
 // import CartContext from './cart/context';
 // import useCart from '../hooks/use-cart';
@@ -36,6 +37,8 @@ export default function App() {
 							<Route path='/signup' component={SignUp} />
 
 							<Route path='/login' component={Login} />
+
+							<Route path='/forgot-password' component={ForgotPassword} />
 						</Switch>
 					</AuthProvider>
 				</Router>
