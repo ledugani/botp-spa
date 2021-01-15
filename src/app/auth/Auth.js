@@ -28,9 +28,14 @@ export function AuthProvider({ children }) {
 		return auth.signInWithEmailAndPassword(email, password);
 	}
 
+	function logout() {
+		return auth.signOut();
+	}
+
 	const value = {
 		currentUser,
 		login,
+		logout,
 		signup
 	}
 
