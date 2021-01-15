@@ -3,6 +3,7 @@ import SignUp from './auth/signup';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { AuthProvider } from './auth/Auth';
+import PrivateRoute from './private';
 
 import Dashboard from '../pages/dashboard';
 import Login from './auth/login';
@@ -30,7 +31,7 @@ export default function App() {
 				<Router>
 					<AuthProvider>
 						<Switch>
-							<Route exact path='/' component={Dashboard} />
+							<PrivateRoute exact path='/' component={Dashboard} />
 
 							<Route path='/signup' component={SignUp} />
 
