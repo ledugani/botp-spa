@@ -12,7 +12,7 @@ import ForgotPassword from './auth/pwreset';
 // import CartContext from './cart/context';
 // import useCart from '../hooks/use-cart';
 // import Layout from './layout';
-// import Homepage from '../pages/homepage';
+import Homepage from '../pages/homepage';
 // import AboutPage from '../pages/about';
 // import MerchPage from '../pages/merch';
 // import CartPage from '../pages/cart';
@@ -22,17 +22,19 @@ import './styles.css';
 export default function App() {
 	return (
 		<Container
-			className='d-flex align-items-center justify-content-center'
+			className='d-flex align-items-center justify-content-center background-color'
 			style={{ minHeight: '100vh' }}
 		>
 			<div
-				className='w-100'
-				style={{ maxWidth: '400px' }}
+				// className='w-100'
+				// style={{ maxWidth: '400px' }}
 			>
 				<Router>
 					<AuthProvider>
 						<Switch>
-							<PrivateRoute exact path='/' component={Dashboard} />
+							<PrivateRoute exact path='/dashboard' component={Dashboard} />
+
+							<Route exact path='/' component={Homepage} />
 
 							<Route path='/signup' component={SignUp} />
 
