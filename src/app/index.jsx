@@ -1,8 +1,12 @@
 import React from 'react';
 import SignUp from './auth/signup';
 import { Container } from 'react-bootstrap';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { AuthProvider } from './auth/Auth';
 
-// import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Dashboard from '../pages/dashboard';
+import Login from './auth/login';
+
 // import CartContext from './cart/context';
 // import useCart from '../hooks/use-cart';
 // import Layout from './layout';
@@ -12,23 +16,30 @@ import { Container } from 'react-bootstrap';
 // import CartPage from '../pages/cart';
 
 import './styles.css';
-import { AuthProvider } from './auth/Auth';
 
 export default function App() {
 	return (
-		<AuthProvider>
-			<Container
-				className='d-flex align-items-center justify-content-center'
-				style={{ minHeight: '100vh' }}
+		<Container
+			className='d-flex align-items-center justify-content-center'
+			style={{ minHeight: '100vh' }}
+		>
+			<div
+				className='w-100'
+				style={{ maxWidth: '400px' }}
 			>
-				<div
-					className='w-100'
-					style={{ maxWidth: '400px' }}
-				>
-					<SignUp />
-				</div>
-			</Container>
-		</AuthProvider>
+				<Router>
+					<AuthProvider>
+						<Switch>
+							<Route exact path='/' component={Dashboard} />
+
+							<Route path='/signup' component={SignUp} />
+
+							<Route path='/login' component={Login} />
+						</Switch>
+					</AuthProvider>
+				</Router>
+			</div>
+		</Container>
 	)
 
 	// return (
