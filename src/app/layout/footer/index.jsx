@@ -3,7 +3,7 @@ import './styles.css';
 
 export default function Footer() {
 	return (
-		<div className="footer">
+		<div className="footer mb-2">
 			<p className="footer-text">
 				Copyright
 

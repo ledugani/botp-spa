@@ -11,11 +11,11 @@ import ForgotPassword from './auth/pwreset';
 
 // import CartContext from './cart/context';
 // import useCart from '../hooks/use-cart';
-// import Layout from './layout';
+import Layout from './layout';
 import Homepage from '../pages/homepage';
 // import AboutPage from '../pages/about';
-// import MerchPage from '../pages/merch';
-// import CartPage from '../pages/cart';
+import MerchPage from '../pages/merch';
+import CartPage from '../pages/cart';
 
 import './styles.css';
 
@@ -31,17 +31,23 @@ export default function App() {
 			>
 				<Router>
 					<AuthProvider>
-						<Switch>
-							<PrivateRoute exact path='/dashboard' component={Dashboard} />
+						<Layout>
+							<Switch>
+								<PrivateRoute exact path='/dashboard' component={Dashboard} />
 
-							<Route exact path='/' component={Homepage} />
+								<PrivateRoute path='/merch' component={MerchPage} />
 
-							<Route path='/signup' component={SignUp} />
+								<PrivateRoute path='/cart' component={CartPage} />
 
-							<Route path='/login' component={Login} />
+								<Route exact path='/' component={Homepage} />
 
-							<Route path='/forgot-password' component={ForgotPassword} />
-						</Switch>
+								<Route path='/signup' component={SignUp} />
+
+								<Route path='/login' component={Login} />
+
+								<Route path='/forgot-password' component={ForgotPassword} />
+							</Switch>
+						</Layout>
 					</AuthProvider>
 				</Router>
 			</div>
