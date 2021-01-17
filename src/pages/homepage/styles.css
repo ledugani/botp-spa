@@ -15,12 +15,11 @@
 	max-width: 90vw;
 	margin: 0 2vw;
 	text-align: center;
+	height: 100%;
 }
 
 .botp-logo {
-	width: 90vw;
-	margin-top: -185px;
-	margin-bottom: -185px;
+	margin-bottom: -105px;
 }
 
 .botp-intro {

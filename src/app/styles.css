@@ -16,15 +16,14 @@
 	--background-color: #1B1B1B;
 	--offset-color: #6b7d7d;
 
-	font-size: 16px;
-	font-family: Arial, Helvetica, sans-serif, sans-serif;
-	background-color: var(--background-color);
+	/* background-color: var(--background-color); */
 	letter-spacing: 1px;
 }
 
 * {
 	box-sizing: border-box;
 	color: var(--base-color);
+	background-color: var(--background-color);
 }
 
 a {
