@@ -23,7 +23,7 @@ export default function PrivateHeader() {
 		}
 	}
 
-	return <div className='__dml header'>
+	return <div className='__dml header private'>
 		<ul>
 			<li>
 				<Link to='/'>
