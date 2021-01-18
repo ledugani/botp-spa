@@ -15,6 +15,7 @@ export default function Track({ trackDetails }) {
 				width: '100%',
 				height: '100%'
 			}}
+			className='song-card'
 		>
 			<Card.Img
 				variant="top"
@@ -23,17 +24,29 @@ export default function Track({ trackDetails }) {
 			/>
 
 			<Card.Body
-				className={trackCharLength.length > 100 ? "song-details lg" : "song-details"}
+				className={
+					trackCharLength.length > 100
+					? "song-details lg"
+					: "song-details"
+				}
 			>
-				<Card.Title>
+				<Card.Title className='pb-3'>
 					{track.name}
 				</Card.Title>
 
-				<Card.Subtitle className="mb-2 text-muted">
-					{track.artists[0].name}
+				<Card.Subtitle className='pb-3'>
+					<strong>
+						{track.artists[0].name}
+					</strong>
 				</Card.Subtitle>
 
-				<Card.Text>
+				<Card.Text
+					className={
+					trackCharLength.length > 100
+					? " "
+					: "pb-3"
+				}
+				>
 					{track.album.name}
 				</Card.Text>
 

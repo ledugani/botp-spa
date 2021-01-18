@@ -15,15 +15,16 @@
 	--secondary-base: #d6cdb4;
 	--background-color: #1B1B1B;
 	--offset-color: #6b7d7d;
-
-	/* background-color: var(--background-color); */
 	letter-spacing: 1px;
+}
+
+#root {
+	background-color: var(--background-color);
 }
 
 * {
 	box-sizing: border-box;
 	color: var(--base-color);
-	background-color: var(--background-color);
 }
 
 a {
