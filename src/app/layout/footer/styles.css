@@ -1,5 +1,10 @@
 .footer-text {
 	text-align: center;
+	color: var(--base-color) !important;
+}
+
+.footer-text > a {
+	color: var(--secondary-base) !important;
 }
 
 .t-link {

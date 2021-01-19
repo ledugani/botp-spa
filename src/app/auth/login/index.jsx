@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Container, Form, Button, Card, Alert } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../Auth';
+import './styles.css';
 
 export default function SignUp() {
 	const emailRef = useRef();
@@ -29,23 +30,24 @@ export default function SignUp() {
 	}
 
 	return (
-
 			<Container
 				className='
 					d-flex
 					align-items-center
 					justify-content-center
-					background-color
 				'
-				style={{ minHeight: '100vh' }}
+				style={{ minHeight: '79.3vh' }}
 			>
 				<div
-					className='w-100'
+					className='w-100 bg-color pb-5'
 					style={{ maxWidth: '400px' }}
 				>
 					<Card>
+						<Card.Header>
+							<h2 className='text-center'>Log In</h2>
+						</Card.Header>
+
 						<Card.Body>
-							<h2 className='text-center mb-4'>Log In</h2>
 
 							{error && <Alert variant='danger'>{error}</Alert>}
 
@@ -66,7 +68,7 @@ export default function SignUp() {
 							</Form>
 
 							<div className='w-100 text-center mt-3'>
-								<Link to='/forgot-password'>Forgot Password?</Link>
+								<Link to='/forgot-password' className='modal-link'>Forgot Password?</Link>
 							</div>
 						</Card.Body>
 					</Card>
@@ -74,7 +76,7 @@ export default function SignUp() {
 					<div
 						className='text-center'
 					>
-						Don't have an account? <Link to='/signup'>Sign Up</Link>
+						Don't have an account? <Link to='/signup' className='modal-link'>Sign Up</Link>
 					</div>
 				</div>
 
