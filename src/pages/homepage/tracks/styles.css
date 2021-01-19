@@ -3,12 +3,11 @@
 }
 
 .single-track {
-	border: 1px solid black;
 	margin: 1rem;
 	padding: 5px;
 	max-width: 282px;
 	height: 475px;
-	background-color: var(--offset-color);
+	background-color: var(--xanadu);
 	border-radius: 5px;
 }
 
@@ -23,14 +22,6 @@
 	outline: inherit;
 	font-size: 42px;
 }
-/*
-.right-btn {
-	margin-left: 0px;
-}
-
-.left-btn {
-	margin-right: 0px;
-} */
 
 .album-cover {
 	margin: 10px;

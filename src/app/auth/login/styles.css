@@ -1,0 +1,20 @@
+.bg-color {
+	background-color: var(--base-color) !important;
+	border-radius: 5px;
+}
+
+/* Links underneath login page */
+
+.modal-link {
+	color: var(--xanadu) !important;
+}
+
+.btn-primary {
+	background-color: var(--botp-blue) !important;
+	border-color: var(--botp-blue) !important;
+}
+
+.card-header {
+	background-color: var(--botp-green) !important;
+	color: var(--base-color);
+}

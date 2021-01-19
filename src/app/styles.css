@@ -9,25 +9,30 @@
 }
 
 :root {
-	--primary-color: #af5d63;
-	--accent-color: #b47978;
+	--popstar: #af5d63;
+	--old-rose: #b47978;
 	--base-color: #F2E6C8;
 	--secondary-base: #d6cdb4;
-	--background-color: #1B1B1B;
-	--offset-color: #6b7d7d;
-
-	/* background-color: var(--background-color); */
+	--eerie-black: #1B1B1B;
+	--xanadu: #6b7d7d;
+	--botp-peach: #F6CBA0;
+	--botp-champagne: #EAD696;
+	--botp-green: #6A8866;
+	--botp-blue: #6289A7;
+	--botp-grey: #fafafa;
 	letter-spacing: 1px;
+}
+
+#root {
+	background-color: var(--eerie-black);
 }
 
 * {
 	box-sizing: border-box;
-	color: var(--base-color);
-	background-color: var(--background-color);
 }
 
 a {
-	color: var(--accent-color);
+	color: var(--old-rose);
 }
 
 table thead th {

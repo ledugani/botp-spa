@@ -1,12 +1,16 @@
-.song-car {
-	padding: 10px;
+.card {
+	border: none !important;
+	word-wrap: normal !important;
+	background-color: transparent !important;
 }
 
 .song-details {
-	display: flex;
-  flex-direction: column;
-	justify-content: center;
-	padding: 5px;
+	background-color: var(--xanadu);
+	color: var(--secondary-base);
+}
+
+.song-details.lg {
+	font-size: 12px;
 }
 
 .track-title {
@@ -17,11 +21,9 @@
 .track-artist {
 	font-style: italic;
 	font-weight: 500;
-	color: var(--secondary-base);
 }
 
 .track-album {
 	font-weight: 200;
 	font-size: 15px;
-	color: var(--secondary-base);
 }

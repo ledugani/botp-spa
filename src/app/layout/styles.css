@@ -1,5 +1,5 @@
-.__dml .container {
-	max-width: 700px;
+.__dml .page-container {
+
 	margin: 0 auto;
 }
 
@@ -8,6 +8,7 @@
 }
 
 .page-content {
+	max-width: 700px;
 	height: 90%;
 	margin: 0 2%;
 }
