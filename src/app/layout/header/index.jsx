@@ -15,13 +15,12 @@ export default function Header() {
 		>
 			<Navbar.Brand href='#home'>
 				<img
-					alt=''
+					alt='BOTP icon'
 					src={logo}
-					width='30'
-					height='30'
+					width='65'
+					height='65'
 					className='d-inline-block align-top'
-				/>{' '}
-				BOTP
+				/>
 			</Navbar.Brand>
 			<Nav className='mr-auto'>
 				<Nav.Link href='/'>Home</Nav.Link>
