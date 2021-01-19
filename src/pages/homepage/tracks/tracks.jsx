@@ -50,8 +50,7 @@ export default function Tracks() {
 				className="items-carousel"
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
-				// numberOfCards={ window.innerWidth > 375 ? 4 : 2 }
-				numberOfCards={3}
+				numberOfCards={ window.innerWidth > 375 ? 4 : 2 }
         gutter={0}
         leftChevron={
 					<button
