@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import logo from '../../../pages/img/BOTP-site-icon.png';
 // import { Link } from 'react-router-dom';
 
 import './styles.css';
@@ -12,7 +13,16 @@ export default function Header() {
 			className='w-100'
 			sticky='top'
 		>
-			<Navbar.Brand href='/'>BOTP</Navbar.Brand>
+			<Navbar.Brand href='#home'>
+				<img
+					alt=''
+					src={logo}
+					width='30'
+					height='30'
+					className='d-inline-block align-top'
+				/>{' '}
+				BOTP
+			</Navbar.Brand>
 			<Nav className='mr-auto'>
 				<Nav.Link href='/'>Home</Nav.Link>
 				<Nav.Link href='/about'>About</Nav.Link>
