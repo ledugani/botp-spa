@@ -13,12 +13,12 @@
 
 .botp-logo {
 	margin-bottom: -105px;
+	margin-top: -105px;
 }
 
 .botp-intro {
 	text-align: center;
 	font-size: 20px;
-	padding: 100px 0;
 }
 
 .stay-tuned {
