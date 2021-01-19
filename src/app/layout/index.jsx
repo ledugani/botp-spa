@@ -26,7 +26,7 @@ export default function Layout({ children }) {
 				? <PrivateHeader />
 				: <Header />
 			}
-			<Container className="page-content">
+			<Container className="page-content pt-4">
 				{children}
 			</Container>
 			<Footer />

@@ -20,7 +20,12 @@ export default function Homepage() {
 			<p className="botp-intro">
 				a music discovery platform,
 				digital art gallery and shoppe developed by
-				<a href="http://ledugani.com/" target="_blank"  rel="noreferrer">
+				<a
+					href="http://ledugani.com/"
+					target="_blank"
+					rel="noreferrer"
+					className='t-link'
+				>
 					T.Dugan
 				</a>
 			</p>
