@@ -17,7 +17,7 @@ export default function Homepage() {
 			<Seo title="Home" />
 			<h1 className="botp-heading">hello, welcome to</h1>
 			<img src={logo} alt="botp logo" className="botp-logo"/>
-			<p className="botp-intro">
+			<p className="botp-intro pb-5">
 				a music discovery platform,
 				digital art gallery and shoppe developed by
 				<a
