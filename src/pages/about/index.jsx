@@ -6,37 +6,15 @@ import stamp from '../img/botp-stamp.png';
 import './styles.css';
 
 export default function AboutPage() {
-	const [show, setShow] = useState(true);
-	function AlertDismissibleExample(show) {
-		if (show) {
-			return (
-				<Alert variant="warning" onClose={() => setShow(false)} dismissible>
-					<Alert.Heading>
-						You've Found My (Not So) Secret About Page!
-					</Alert.Heading>
-					<p>
-						Good job.
-					</p>
-				</Alert>
-			);
-		}
-		return <Button onClick={() => setShow(true)}>Show Alert</Button>;
-	}
-
 	return (
 		<>
 			<Seo title='About' />
 			<Container className='pb-5'>
-				{/* {
-					show
-					? <Alert variant="danger" onClose={() => setShow(false)} dismissible>
-							You've found my (Not So) Secret About Page! Good job.
-						</Alert>
-					: null
-				} */}
-				<AlertDismissibleExample show={ show } />
+				<Alert variant="success">
+					You've found my (Not So) Secret About Page! Good job.
+				</Alert>
 				<Row>
-					<Col className='about-botp'>
+					<Col className='about-botp pt-4'>
 						<h1>About BOTP</h1>
 						<p>
 							Bottom of the Pile is a collaborative space for lovers of music in all its forms, from Acid Jazz and  to AT40 Pop. Here, we'll be covering tunes old and new to find those sounds that create positive influence in our lives and reinforce our creative spirit.
