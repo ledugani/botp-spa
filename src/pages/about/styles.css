@@ -1,0 +1,14 @@
+/* text color */
+.about-botp {
+	color: var(--base-color) !important;
+}
+
+.botp-stamp {
+	color: #fff;
+}
+
+/* picture styles */
+.tom-image {
+	padding: 10px;
+	border: 1px solid whitesmoke;
+}
