@@ -1,8 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useState, useContext } from 'react';
 import cartContext from '../../cart/context';
 import { useAuth } from '../../auth/Auth';
-import { Link, useHistory } from 'react-router-dom';
-import  { Button } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
+import  { Navbar, Nav } from 'react-bootstrap';
+import logo from '../../../pages/img/BOTP-site-icon.png';
 
 import './styles.css';
 
@@ -23,45 +24,49 @@ export default function PrivateHeader() {
 		}
 	}
 
-	return <div className='__dml header private'>
-		<ul>
-			<li>
-				<Link to='/'>
-					Home
-				</Link>
-			</li>
+	return (
+		<Navbar
+			bg='dark'
+			variant='dark'
+			className='w-100 __dml header private'
+			sticky='top'
+		>
+			<Navbar.Brand href='#home'>
+				<img
+					alt='BOTP icon'
+					src={logo}
+					width='65'
+					height='65'
+					className='d-inline-block align-top'
+				/>
+			</Navbar.Brand>
 
-			<li>
-				<Link to='/dashboard'>
-					Dashboard
-				</Link>
-			</li>
+			<Nav className='mr-auto'>
+				<Nav.Link href='/'>Home</Nav.Link>
 
-			<li>
-				<Link to='/merch'>
-					Merch
-				</Link>
-			</li>
+				<Nav.Link href='/dashboard'>Dashboard</Nav.Link>
 
-			<li>
-				<Link to='/cart'>
+				<Nav.Link href='/merch'>Merch</Nav.Link>
+
+				<Nav.Link href='/cart'>
 					Cart:
-				</Link>
+					({
+						cartItems !== undefined
+						? cartItems.reduce((acc, item) => acc + item.qty, 0)
+						: ' '
+					})
+				</Nav.Link>
+			</Nav>
 
-				({
-					cartItems !== undefined
-					? cartItems.reduce((acc, item) => acc + item.qty, 0)
-					: console.log(cartItems)
-				})
-			</li>
+			<Nav className="justify-content-end">
+				<Nav.Item>
+					<Nav.Link onClick={handleLogout}>
+	 				Log Out
+					</Nav.Link>
+				</Nav.Item>
 
-			<li>
-				<Button variant='link' onClick={handleLogout}>
-					Log Out
-				</Button>
-			</li>
-
-			{error && <li>{error}</li>}
-		</ul>
-	</div>
+				{error && <Nav.Item>{error}</Nav.Item>}
+			</Nav>
+		</Navbar>
+	);
 }

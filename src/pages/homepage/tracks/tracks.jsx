@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import Track from './track';
 import { Credentials } from '../../../spotify/Credentials';
-import axios from 'axios';
-//import Bnt from './bnt';
-import loading from '../../img/specs.gif';
-import './styles.css';
 import ItemsCarousel from 'react-items-carousel';
+import loading from '../../img/specs.gif';
+import { Button } from 'react-bootstrap';
+import Track from './track';
+import axios from 'axios';
+import './styles.css';
 
-export default function Tracks() {
 
+export default function Tracks(props) {
 	const spotify = Credentials();
-
 	const [tracks, setTracks] = useState([]);
 	const [activeItemIndex, setActiveItemIndex] = useState(0);
 
 	useEffect(() => {
-
 		axios(`https://accounts.spotify.com/api/token`, {
 			headers: {
 				'Content-Type' : 'application/x-www-form-urlencoded',
@@ -24,10 +22,7 @@ export default function Tracks() {
 			data: 'grant_type=client_credentials',
 			method: 'POST'
 		}).then((response) => {
-			// replace this string with the Spotify ID of the playlist
-			const playlist_id = `40anMtgzQoKGiqvz7GQcFP`;
-
-			axios(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks?market=ES`, {
+			axios(`https://api.spotify.com/v1/playlists/${props.playlist}/tracks?market=ES`, {
 				method: 'GET',
 				headers: {
 					'Accept' :'application/json',
@@ -41,30 +36,31 @@ export default function Tracks() {
 				})
 			});
 		})
-
-	}, []);
+	}, [props]);
 
 	return (
 		<>
 			<ItemsCarousel
-				className="items-carousel"
+				className='items-carousel'
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
-				numberOfCards={ window.innerWidth > 375 ? 4 : 2 }
+        numberOfCards={ window.innerWidth > 375 ? 4 : 2 }
         gutter={0}
         leftChevron={
-					<button
+					<Button
+						variant='light'
 						className='carousel-button left-btn'
 					>
 						{'<'}
-					</button>
+					</Button>
 				}
         rightChevron={
-					<button
+					<Button
+						variant='light'
 						className='carousel-button right-btn'
 					>
 						{'>'}
-					</button>
+					</Button>
 				}
         outsideChevron
 				chevronWidth={20}
@@ -74,14 +70,15 @@ export default function Tracks() {
 			{
 				tracks && tracks.listOfTracksFromAPI
 				? tracks.listOfTracksFromAPI.map((details) => {
-					return <div key={details.added_at} className="single-track">
+					return <div key={details.added_at} className='single-track'>
 						<Track key={details.track.id} trackDetails={details} />
 					</div>
 				})
-				: <div className="loading">
+				: <div className='loading'>
 						<img
 							src={loading}
-							className="loading-gif"
+							className='loading-gif'
+							alt='loading gif'
 						/>
 						Rendering...
 					</div>

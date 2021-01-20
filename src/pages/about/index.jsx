@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Row, Col, Container, Alert, Button } from 'react-bootstrap';
+import React from 'react';
+import { Row, Col, Container, Alert } from 'react-bootstrap';
 import leduganihimself from '../img/IMG_2075.png';
 import Seo from '../../app/seo';
 import stamp from '../img/botp-stamp.png';
