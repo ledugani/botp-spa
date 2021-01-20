@@ -30,12 +30,19 @@ export default function Homepage() {
 				</a>
 			</p>
 
-			{/* Best New Tracks */}
 			<div className="best-new-tracks">
 
 				<h2 className="bnt-header">Best Tracks of 2020</h2>
 
-				<Tracks />
+				<Tracks playlist='40anMtgzQoKGiqvz7GQcFP' />
+
+			</div>
+
+			<div className="best-new-tracks mt-5">
+
+				<h2 className="bnt-header">What We're Listening To</h2>
+
+				<Tracks playlist='6MeJe1F5CO3ybwA2a0Q64U' />
 
 			</div>
 
