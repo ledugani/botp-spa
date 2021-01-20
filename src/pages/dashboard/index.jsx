@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Card, Alert, Button } from 'react-bootstrap';
 import { useAuth } from '../../app/auth/Auth';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import './styles.css';
 
 export default function Dashboard() {
 	const [ error, setError ] = useState('');
@@ -10,7 +11,6 @@ export default function Dashboard() {
 
 	async function handleLogout() {
 		setError('');
-
 		try {
 			await logout();
 			history.push('/login');
@@ -21,12 +21,12 @@ export default function Dashboard() {
 
 	return (
 		<>
-			<Card>
+			<Card className='dashboard'>
 				<Card.Body>
-					<h2>Welcome to Your Dashboard</h2>
+					<h2>Welcome to Your Dashboard, {currentUser.email}</h2>
 					{error && <Alert variant='danger'>{error}</Alert>}
-					<strong>Email: </strong> {currentUser.email}
-					<Link to='/update-profile' className='btn btn-primary w-100 mt-3'></Link>
+					<strong>How's it going?</strong>
+					{/* <Link to='/update-profile' className='btn btn-primary w-100 mt-3'></Link> */}
 				</Card.Body>
 			</Card>
 

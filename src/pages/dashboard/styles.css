@@ -1,0 +1,7 @@
+* {
+	color: var(--base-color);
+}
+
+.dashboard {
+	height: 73.5vh;
+}
