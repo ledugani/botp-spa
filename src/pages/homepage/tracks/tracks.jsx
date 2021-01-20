@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Credentials } from '../../../spotify/Credentials';
 import ItemsCarousel from 'react-items-carousel';
 import loading from '../../img/specs.gif';
+import { Button } from 'react-bootstrap';
 import Track from './track';
 import axios from 'axios';
 import './styles.css';
@@ -46,18 +47,20 @@ export default function Tracks(props) {
         numberOfCards={ window.innerWidth > 375 ? 4 : 2 }
         gutter={0}
         leftChevron={
-					<button
+					<Button
+						variant='light'
 						className='carousel-button left-btn'
 					>
 						{'<'}
-					</button>
+					</Button>
 				}
         rightChevron={
-					<button
+					<Button
+						variant='light'
 						className='carousel-button right-btn'
 					>
 						{'>'}
-					</button>
+					</Button>
 				}
         outsideChevron
 				chevronWidth={20}

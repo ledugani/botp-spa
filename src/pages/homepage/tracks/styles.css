@@ -40,6 +40,17 @@
 	width: 20vw;
 }
 
+button.carousel-button {
+	background-color: var(--botp-grey);
+}
+
+button.carousel-button:focus {
+  outline: none;
+	box-shadow: none;
+	background-color: #f8f9fa;
+	border-color: #f8f9fa;
+}
+
 /* Responsive - iPhone X+ */
 
 /* Portrait and Landscape */
