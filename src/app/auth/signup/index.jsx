@@ -7,12 +7,11 @@ export default function SignUp() {
 	const emailRef = useRef();
 	const passwordRef = useRef();
 	const passwordConfirmRef = useRef();
+	const displayNameRef = useRef();
 	const history = useHistory();
-
 	const [error, setError] = useState('');
 	const [loading, setLoading] = useState('');
-
-	const { signup } = useAuth();
+	const { signup, currentUser } = useAuth();
 
 	async function handleSubmit(e) {
 		e.preventDefault();
@@ -24,7 +23,11 @@ export default function SignUp() {
 		try {
 			setError('');
 			setLoading(true);
-			await signup(emailRef.current.value, passwordRef.current.value);
+			await signup(
+				emailRef.current.value,
+				passwordRef.current.value,
+				displayNameRef.current.value
+			);
 			history.push('/');
 		} catch {
 			setError('Failed to create an account')
@@ -45,6 +48,11 @@ export default function SignUp() {
 						<Form.Group id='email'>
 							<Form.Label>Email: </Form.Label>
 							<Form.Control type='email' ref={emailRef} required />
+						</Form.Group>
+
+						<Form.Group id='displayName'>
+							<Form.Label>Username: </Form.Label>
+							<Form.Control type='text' ref={displayNameRef} required />
 						</Form.Group>
 
 						<Form.Group id='password'>
