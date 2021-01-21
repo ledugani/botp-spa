@@ -4,14 +4,16 @@ import { Credentials } from '../../spotify/Credentials';
 import { useAuth } from '../../app/auth/Auth';
 import { useHistory } from 'react-router-dom';
 import Dropdown from './dropdown';
+import Artists from './artists';
 import axios from 'axios';
 import './styles.css';
 
 export default function Dashboard() {
 	const [ error, setError ] = useState('');
 	const [ token, setToken ] = useState('');
-	const [genres, setGenres] = useState({selectedGenre: '', listOfGenresFromAPI: []});
-	const [playlist, setPlaylist] = useState({selectedPlaylist: '', listOfPlaylistsFromAPI: []});
+	const [genres, setGenres] = useState({ selectedGenre: '', listOfGenresFromAPI: [] });
+	const [playlist, setPlaylist] = useState({ selectedPlaylist: '', listOfPlaylistsFromAPI: [] });
+	const [tracks, setTracks] = useState({ listOfTracksFromAPI: [] });
 	const spotify = Credentials();
 	const { logout } = useAuth();
 	const history = useHistory();
@@ -35,7 +37,6 @@ export default function Dashboard() {
 			data: 'grant_type=client_credentials',
 			method: 'POST'
 		}).then((response) => {
-			console.log(response.data.access_token);
 			setToken(response.data.access_token);
 
 			axios('https://api.spotify.com/v1/browse/categories?locale=sv_US', {
@@ -73,6 +74,17 @@ export default function Dashboard() {
 			selectedPlaylist: val,
 			listOfPlaylistsFromAPI: playlist.listOfPlaylistsFromAPI
 		});
+
+		axios(`https://api.spotify.com/v1/playlists/${val}/tracks`, {
+			method: 'GET',
+			headers: {
+				'Authorization' : 'Bearer ' + token
+			}
+		}).then(tracksResponse => {
+			setTracks({
+				listOfTracksFromAPI: tracksResponse.data.items
+			})
+		})
 	}
 
 	return (
@@ -88,12 +100,22 @@ export default function Dashboard() {
 							label='Genre'
 						/>
 
-						<Dropdown
-							options={playlist.listOfPlaylistsFromAPI}
-							selectedValue={playlist.selectedPlaylist}
-							changed={playlistChanged}
-							label='Playlist'
-						/>
+						{
+							genres.selectedGenre
+							&&
+							<Dropdown
+								options={playlist.listOfPlaylistsFromAPI}
+								selectedValue={playlist.selectedPlaylist}
+								changed={playlistChanged}
+								label='Playlist'
+							/>
+						}
+
+						{
+							tracks.listOfTracksFromAPI.length > 0
+							&&
+							<Artists tracks={tracks.listOfTracksFromAPI} />
+						}
 
 						<Button variant='primary' type='submit'>Submit</Button>
 					</Form>

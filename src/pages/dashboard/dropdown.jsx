@@ -9,12 +9,13 @@ export default function Dropdown(props) {
 
 	return (
 		<Form.Group controlId="exampleForm.ControlSelect1">
-			<Form.Label>Select {props.label}</Form.Label>
+			<Form.Label>{props.label}s</Form.Label>
 			<Form.Control
 				as="select"
 				value={props.selectedValue}
 				onChange={dropdownChanged}
 			>
+				<option defaultValue>Select a {props.label}...</option>
 				{
 					props.options.map((item, idx) => {
 						return <option key={idx} value={item.id}>{item.name}</option>

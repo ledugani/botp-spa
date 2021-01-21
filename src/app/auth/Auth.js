@@ -27,7 +27,7 @@ export function AuthProvider({ children }) {
 				displayName: username
 			})
 		}).catch((err) => {
-			console.log(err);
+			console.error(err);
 		});
 	}
 
