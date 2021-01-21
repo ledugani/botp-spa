@@ -20,8 +20,15 @@ export function AuthProvider({ children }) {
 		return unsubscribe;
 	}, []);
 
-	function signup(email, password) {
-		return auth.createUserWithEmailAndPassword(email, password);
+	function signup(email, password, username) {
+		return auth.createUserWithEmailAndPassword(email, password)
+		.then((result) => {
+			return result.user.updateProfile({
+				displayName: username
+			})
+		}).catch((err) => {
+			console.error(err);
+		});
 	}
 
 	function login(email, password) {

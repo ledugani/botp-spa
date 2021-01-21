@@ -1,0 +1,8 @@
+* {
+	color: var(--base-color);
+}
+
+.dashboard {
+	min-height: 73.5vh;
+	height: 100%;
+}

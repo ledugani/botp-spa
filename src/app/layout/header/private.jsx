@@ -1,16 +1,16 @@
-import React, { useState, useContext } from 'react';
-import cartContext from '../../cart/context';
+import React, { useState } from 'react';
+// import cartContext from '../../cart/context';
 import { useAuth } from '../../auth/Auth';
 import { useHistory } from 'react-router-dom';
-import  { Navbar, Nav } from 'react-bootstrap';
+import  { Navbar, Nav, Row, Col } from 'react-bootstrap';
 import logo from '../../../pages/img/BOTP-site-icon.png';
 
 import './styles.css';
 
 export default function PrivateHeader() {
 	const [error, setError] = useState('');
-	const { logout } = useAuth();
-	const { cartItems } = useContext(cartContext);
+	const { logout, currentUser } = useAuth();
+	// const { cartItems } = useContext(cartContext);
 	const history = useHistory();
 
 	async function handleLogout() {
@@ -46,7 +46,7 @@ export default function PrivateHeader() {
 
 				<Nav.Link href='/dashboard'>Dashboard</Nav.Link>
 
-				<Nav.Link href='/merch'>Merch</Nav.Link>
+				{/* <Nav.Link href='/merch'>Merch</Nav.Link>
 
 				<Nav.Link href='/cart'>
 					Cart:
@@ -55,10 +55,28 @@ export default function PrivateHeader() {
 						? cartItems.reduce((acc, item) => acc + item.qty, 0)
 						: ' '
 					})
-				</Nav.Link>
+				</Nav.Link> */}
 			</Nav>
 
-			<Nav className="justify-content-end">
+			<Nav className='justify-content-end'>
+				<Nav.Item className='greeting pr-3'>
+					<Row noGutters className='pt-2'>
+						<Col>
+							<p className='mb-0'>Howdy, </p>
+						</Col>
+
+						<Col>
+							<Nav.Link href='/profile' className='pt-0 pr-0'>
+								{ currentUser.displayName }
+							</Nav.Link>
+						</Col>
+
+						<Col>
+							<p>!</p>
+						</Col>
+					</Row>
+				</Nav.Item>
+
 				<Nav.Item>
 					<Nav.Link onClick={handleLogout}>
 	 				Log Out
