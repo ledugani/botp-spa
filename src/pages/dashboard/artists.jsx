@@ -1,23 +1,36 @@
-import React from 'react'
+import React from 'react';
+import { Form } from 'react-bootstrap';
 
 export default function Artists(props) {
 	return (
-		<ul>
+		<Form.Group>
 			{
 				props.tracks.map((track) => {
-					return <li key={track.id}>
+					return <Form.Group key={track.track.id}>
 						{
 							track.track.artists.length > 1
 							// for more than one artist
 							? track.track.artists.map((artist) => {
-								return <p key={artist.id}>{artist.name}</p>
+								return <Form.Check
+												key={artist.id}
+												type='checkbox'
+												label={artist.name}
+												value={artist.name}
+												onChange={event => props.onChange(event.target.value)}
+											/>
 							})
 							//for only one artist
-							: <p key={track.id}>{track.track.artists[0].name}</p>
+							: <Form.Check
+									key={track.track.id}
+									type='checkbox'
+									label={track.track.artists[0].name}
+									value={track.track.artists[0].name}
+									onChange={event => props.onChange(event.target.value)}
+								/>
 						}
-					</li>
+					</Form.Group>
 				})
 			}
-		</ul>
+		</Form.Group>
 	)
 }

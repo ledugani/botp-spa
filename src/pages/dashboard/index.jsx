@@ -11,9 +11,11 @@ import './styles.css';
 export default function Dashboard() {
 	const [ error, setError ] = useState('');
 	const [ token, setToken ] = useState('');
-	const [genres, setGenres] = useState({ selectedGenre: '', listOfGenresFromAPI: [] });
-	const [playlist, setPlaylist] = useState({ selectedPlaylist: '', listOfPlaylistsFromAPI: [] });
-	const [tracks, setTracks] = useState({ listOfTracksFromAPI: [] });
+	const [ genres, setGenres ] = useState({ selectedGenre: '', listOfGenresFromAPI: [] });
+	const [ playlist, setPlaylist ] = useState({ selectedPlaylist: '', listOfPlaylistsFromAPI: [] });
+	const [ tracks, setTracks ] = useState({ listOfTracksFromAPI: [] });
+	const [ artists, setArtists ] = useState({selectedArtists: []});
+
 	const spotify = Credentials();
 	const { logout } = useAuth();
 	const history = useHistory();
@@ -87,11 +89,45 @@ export default function Dashboard() {
 		})
 	}
 
+	const addArtist = (artist) => {
+		// artists.selectedArtists.length === 0
+		// ? setArtists({
+		// 		selectedArtists: artist
+		// 	})
+		// : setArtists([...artists, {
+		// 	 	selectedArtists: artist
+		// 	}])
+		// artists === null
+		// ? setArtists([...artists, {
+		// 	selectedArtists: artist
+		// }])
+		// :
+		if(artists.selectedArtists.length === 0) {
+			setArtists({selectedArtists: artist})
+		}
+
+		if(artists.selectedArtists.length > 0) {
+			setArtists({
+				selectedArtists: [{...artists}, artist]
+			});
+			console.log('artists: ', typeof artists, ' value: ', artists);
+		}
+
+
+		console.log('artist: ', typeof artist, ' value: ', artist);
+	}
+
 	return (
 		<Container>
+			<h1 className='mb-4'>User Dashboard</h1>
 			<Card className='dashboard'>
-				<Card.Header>User Dashboard</Card.Header>
-				<Card.Body>
+				<Card.Header>Artist Selector</Card.Header>
+				<Card.Body className='dashboard-card'>
+					<p>
+						<em>
+							Select a genre, then a playlist to show artists. Then choose your favorites and click Submit.
+						</em>
+					</p>
 					<Form onSubmit={() => {}}>
 						<Dropdown
 							options={genres.listOfGenresFromAPI}
@@ -114,16 +150,23 @@ export default function Dashboard() {
 						{
 							tracks.listOfTracksFromAPI.length > 0
 							&&
-							<Artists tracks={tracks.listOfTracksFromAPI} />
+							<Artists
+								tracks={tracks.listOfTracksFromAPI}
+								onChange={addArtist}
+							/>
 						}
-
-						<Button variant='primary' type='submit'>Submit</Button>
 					</Form>
 				</Card.Body>
 			</Card>
 
 			<div className='w-100 text-center mt-2'>
-				<Button variant='link' onClick={handleLogout}>Log Out</Button>
+				<Button
+					variant='link'
+					onClick={handleLogout}
+				>
+					Log Out
+				</Button>
+
 				{error && <Alert variant='danger'>{error}</Alert>}
 			</div>
 		</Container>

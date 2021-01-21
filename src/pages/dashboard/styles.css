@@ -6,3 +6,7 @@
 	min-height: 73.5vh;
 	height: 100%;
 }
+
+.dashboard-card {
+	background-color: var(--gunmetal);
+}

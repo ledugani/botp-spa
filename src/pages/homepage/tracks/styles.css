@@ -1,12 +1,11 @@
-.sc-bwzfXH.gwZiig {
-	height: 530px;
-}
+
 
 .single-track {
 	margin: 1rem;
 	padding: 5px;
 	max-width: 282px;
-	height: 475px;
+	min-height: 475px;
+	height: 100%;
 	background-color: var(--xanadu);
 	border-radius: 5px;
 }
