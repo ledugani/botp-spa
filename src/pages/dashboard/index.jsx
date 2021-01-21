@@ -14,7 +14,7 @@ export default function Dashboard() {
 	const [ genres, setGenres ] = useState({ selectedGenre: '', listOfGenresFromAPI: [] });
 	const [ playlist, setPlaylist ] = useState({ selectedPlaylist: '', listOfPlaylistsFromAPI: [] });
 	const [ tracks, setTracks ] = useState({ listOfTracksFromAPI: [] });
-	const [ artists, setArtists ] = useState({selectedArtists: []});
+	const [ artists, setArtists ] = useState({ selectedArtists: [] });
 
 	const spotify = Credentials();
 	const { logout } = useAuth();
@@ -90,31 +90,15 @@ export default function Dashboard() {
 	}
 
 	const addArtist = (artist) => {
-		// artists.selectedArtists.length === 0
-		// ? setArtists({
-		// 		selectedArtists: artist
-		// 	})
-		// : setArtists([...artists, {
-		// 	 	selectedArtists: artist
-		// 	}])
-		// artists === null
-		// ? setArtists([...artists, {
-		// 	selectedArtists: artist
-		// }])
-		// :
-		if(artists.selectedArtists.length === 0) {
-			setArtists({selectedArtists: artist})
-		}
+		let newArtists = artists.selectedArtists;
 
-		if(artists.selectedArtists.length > 0) {
-			setArtists({
-				selectedArtists: [{...artists}, artist]
-			});
-			console.log('artists: ', typeof artists, ' value: ', artists);
-		}
-
-
-		console.log('artist: ', typeof artist, ' value: ', artist);
+		newArtists.length === 0
+		? setArtists({
+			selectedArtists: [artist]
+		})
+		: setArtists({
+			selectedArtists: [...newArtists, artist]
+		})
 	}
 
 	return (
@@ -123,11 +107,13 @@ export default function Dashboard() {
 			<Card className='dashboard'>
 				<Card.Header>Artist Selector</Card.Header>
 				<Card.Body className='dashboard-card'>
-					<p>
-						<em>
-							Select a genre, then a playlist to show artists. Then choose your favorites and click Submit.
-						</em>
-					</p>
+					<em>
+						<ol>
+							<li>Select a genre you like from the dropdown menu.</li>
+							<li>Select a playlist that might have some artists you like.</li>
+							<li>Pick your favorite artists.</li>
+						</ol>
+					</em>
 					<Form onSubmit={() => {}}>
 						<Dropdown
 							options={genres.listOfGenresFromAPI}
