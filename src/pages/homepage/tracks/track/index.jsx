@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-
+import { formatDate } from '../../../../modules/dates';
 import './styles.css';
 
 export default function Track({ trackDetails }) {
@@ -50,9 +50,9 @@ export default function Track({ trackDetails }) {
 					{track.album.name}
 				</Card.Text>
 
-				<Card.Text>
+				<Card.Text className='track-date'>
 					<em>
-						{track.album.release_date}
+						{ track.album.release_date && formatDate(track.album.release_date) }
 					</em>
 				</Card.Text>
 			</Card.Body>

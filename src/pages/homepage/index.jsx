@@ -1,12 +1,11 @@
-import React from 'react';
-import Seo from '../../app/seo';
-import Tracks from './tracks/tracks';
+import { faGithub, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import logo from '../img/botp-top-2020-variant-cream-outline.svg';
-import './styles.css';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faGithub, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import Tracks from './tracks/tracks';
+import Seo from '../../app/seo';
+import React from 'react';
+import './styles.css';
 
 library.add(faGithub, faTwitter, faInstagram);
 

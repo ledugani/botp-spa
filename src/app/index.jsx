@@ -9,8 +9,8 @@ import ForgotPassword from './auth/pwreset';
 import Layout from './layout';
 import Homepage from '../pages/homepage';
 import AboutPage from '../pages/about';
-import MerchPage from '../pages/merch';
-import CartPage from '../pages/cart';
+// import MerchPage from '../pages/merch';
+// import CartPage from '../pages/cart';
 
 import './styles.css';
 
@@ -22,9 +22,9 @@ export default function App() {
 					<Switch>
 						<PrivateRoute exact path='/dashboard' component={Dashboard} />
 
-						<PrivateRoute path='/merch' component={MerchPage} />
+						{/* <PrivateRoute path='/merch' component={MerchPage} />
 
-						<PrivateRoute path='/cart' component={CartPage} />
+						<PrivateRoute path='/cart' component={CartPage} /> */}
 
 						<Route exact path='/' component={Homepage} />
 
