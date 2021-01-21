@@ -90,15 +90,28 @@ export default function Dashboard() {
 	}
 
 	const addArtist = (artist) => {
-		let newArtists = artists.selectedArtists;
+		const newArtists = artists.selectedArtists;
 
-		newArtists.length === 0
-		? setArtists({
-			selectedArtists: [artist]
-		})
-		: setArtists({
-			selectedArtists: [...newArtists, artist]
-		})
+		if(newArtists.length === 0) {
+			setArtists({
+				selectedArtists: [artist]
+			})
+		} else if (newArtists === 1) {
+			setArtists(() => {
+				const existing = newArtists.find((item) => item === artist)
+
+				return existing
+				? [...newArtists.filter(item => item === artist)]
+				: [...newArtists, artist]
+
+				// () => {
+				// 	const existing = newArtists.filter(item => item === artist)
+
+				// 	existing
+				// 	selectedArtists: [...newArtists, artist]
+				// }
+			})
+		}
 	}
 
 	return (
