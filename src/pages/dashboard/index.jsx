@@ -89,27 +89,20 @@ export default function Dashboard() {
 		})
 	}
 
-	const addArtist = (artist) => {
-		const newArtists = artists.selectedArtists;
+	const toggleArtist = (artist) => {
+		const chosenArtists = artists.selectedArtists;
+		const artistExists = chosenArtists.find((item) => item === artist);
 
-		if(newArtists.length === 0) {
+		// if (the checked value exists in the state already)
+		if (artistExists) {
+			// then remove that value from state
 			setArtists({
-				selectedArtists: [artist]
-			})
-		} else if (newArtists === 1) {
-			setArtists(() => {
-				const existing = newArtists.find((item) => item === artist)
-
-				return existing
-				? [...newArtists.filter(item => item === artist)]
-				: [...newArtists, artist]
-
-				// () => {
-				// 	const existing = newArtists.filter(item => item === artist)
-
-				// 	existing
-				// 	selectedArtists: [...newArtists, artist]
-				// }
+				selectedArtists: [...chosenArtists.filter(item => item !== artist)]
+			});
+		} else {
+			// add artist to state
+			setArtists({
+				selectedArtists: [...chosenArtists, artist]
 			})
 		}
 	}
@@ -151,7 +144,7 @@ export default function Dashboard() {
 							&&
 							<Artists
 								tracks={tracks.listOfTracksFromAPI}
-								onChange={addArtist}
+								onChange={toggleArtist}
 							/>
 						}
 					</Form>
