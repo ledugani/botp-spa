@@ -46,6 +46,8 @@ export default function PrivateHeader() {
 
 				<Nav.Link href='/dashboard'>Dashboard</Nav.Link>
 
+				<Nav.Link href='/artist-finder'>Find Artists</Nav.Link>
+
 				{/* <Nav.Link href='/merch'>Merch</Nav.Link>
 
 				<Nav.Link href='/cart'>

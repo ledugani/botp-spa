@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { AuthProvider } from './auth/Auth';
 import PrivateRoute from './private';
 import Dashboard from '../pages/dashboard';
+import ArtistFinder from '../pages/artist-finder';
 import Login from './auth/login';
 import ForgotPassword from './auth/pwreset';
 import Layout from './layout';
@@ -21,6 +22,8 @@ export default function App() {
 				<Layout>
 					<Switch>
 						<PrivateRoute exact path='/dashboard' component={Dashboard} />
+
+						<PrivateRoute exact path='/artist-finder' component={ArtistFinder} />
 
 						{/* <PrivateRoute path='/merch' component={MerchPage} />
 
