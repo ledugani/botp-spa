@@ -3,6 +3,7 @@ import { Card, Alert, Button, Container, Form } from 'react-bootstrap';
 import { Credentials } from '../../spotify/Credentials';
 import { useAuth } from '../../app/auth/Auth';
 import { useHistory } from 'react-router-dom';
+import { database } from '../../firebase';
 import Dropdown from './dropdown';
 import Artists from './artists';
 import axios from 'axios';
@@ -107,11 +108,20 @@ export default function ArtistFinder() {
 		}
 	}
 
+	function addToDB(e) {
+		e.preventDefault();
+
+		// Create
+		database.artists.add({
+			artists: artists
+		})
+	}
+
 	return (
 		<Container>
-			<h1 className='mb-4'>User Dashboard</h1>
+			<h1 className='mb-4'>Artist Finder</h1>
 			<Card className='dashboard'>
-				<Card.Header>Artist Selector</Card.Header>
+				<Card.Header>Select Artist by Genre</Card.Header>
 				<Card.Body className='dashboard-card'>
 					<em>
 						<ol>
@@ -148,11 +158,17 @@ export default function ArtistFinder() {
 									onChange={toggleArtist}
 								/>
 
-								<Button variant='info' disabled={
-									artists.selectedArtists.length === 0
-									? true
-									: false
-								}>Save Artists</Button>
+								<Button
+									variant='info'
+									onClick={addToDB}
+									disabled={
+										artists.selectedArtists.length === 0
+										? true
+										: false
+									}
+								>
+									Save Artists
+								</Button>
 							</div>
 						}
 					</Form>

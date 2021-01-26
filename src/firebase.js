@@ -1,4 +1,5 @@
 import firebase from 'firebase/app';
+import 'firebase/firestore';
 import 'firebase/auth';
 
 const app = firebase.initializeApp({
@@ -11,6 +12,12 @@ const app = firebase.initializeApp({
 	measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 });
 
+const firestore = app.firestore();
+
 export const auth = app.auth();
+
+export const database = {
+	artists: firestore.collection('artists')
+}
 
 export default app;
