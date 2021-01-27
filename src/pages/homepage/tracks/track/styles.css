@@ -4,6 +4,11 @@
 	background-color: transparent !important;
 }
 
+.secondary {
+	width: 200px !important;
+	left: 0 !important;
+}
+
 .song-details {
 	background-color: var(--xanadu);
 	color: var(--secondary-base);

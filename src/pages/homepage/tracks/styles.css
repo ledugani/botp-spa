@@ -1,6 +1,6 @@
 
 
-.single-track {
+/* .single-track {
 	margin: 1rem;
 	padding: 5px;
 	max-width: 282px;
@@ -8,6 +8,10 @@
 	height: 100%;
 	background-color: var(--xanadu);
 	border-radius: 5px;
+} */
+
+.secondary > img {
+	width: 50px;
 }
 
 .carousel-button {

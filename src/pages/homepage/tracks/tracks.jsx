@@ -12,6 +12,7 @@ export default function Tracks(props) {
 	const spotify = Credentials();
 	const [tracks, setTracks] = useState([]);
 	const [activeItemIndex, setActiveItemIndex] = useState(0);
+	let count = 0;
 
 	useEffect(() => {
 		axios(`https://accounts.spotify.com/api/token`, {
@@ -22,7 +23,7 @@ export default function Tracks(props) {
 			data: 'grant_type=client_credentials',
 			method: 'POST'
 		}).then((response) => {
-			axios(`https://api.spotify.com/v1/playlists/${props.playlist}/tracks?market=ES`, {
+			axios(`https://api.spotify.com/v1/playlists/${props.playlist}/tracks?limit=10`, {
 				method: 'GET',
 				headers: {
 					'Accept' :'application/json',
@@ -36,11 +37,11 @@ export default function Tracks(props) {
 				})
 			});
 		})
-	}, [props]);
+	}, [spotify.ClientId, spotify.ClientSecret, props]);
 
 	return (
 		<>
-			<ItemsCarousel
+			{/* <ItemsCarousel
 				className='items-carousel'
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
@@ -66,12 +67,24 @@ export default function Tracks(props) {
 				chevronWidth={20}
 				infiniteLoop={true}
 				slidesToScroll={2}
-      >
+      > */}
 			{
 				tracks && tracks.listOfTracksFromAPI
 				? tracks.listOfTracksFromAPI.map((details) => {
+					count++;
+
 					return <div key={details.added_at} className='single-track'>
-						<Track key={details.track.id} trackDetails={details} />
+
+						<Track
+							key={details.track.id}
+							trackDetails={details}
+							imageSize={ count > 1
+								? 'secondary'
+								: 'first'
+							}
+						/>
+
+
 					</div>
 				})
 				: <div className='loading'>
@@ -83,7 +96,7 @@ export default function Tracks(props) {
 						Rendering...
 					</div>
 			}
-			</ItemsCarousel>
+			{/* </ItemsCarousel> */}
 		</>
 	);
 }
