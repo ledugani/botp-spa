@@ -19,33 +19,37 @@ export default function Track({ trackDetails, count }) {
 			}
 
 			<Row className='pt-5'>
-				{ window.innerWidth > 770 || count !== 1
-					? <Col>
-							<Card.Img
-								src={track.album.images[1].url}
-								alt={track.album.name + ' album cover'}
-							/>
-						</Col>
-					: ''
-				}
+				<Col
+					xs={ count === 1 ? 12 : 6 }
+					md={6}
+				>
+					<Card.Img
+						src={track.album.images[1].url}
+						alt={track.album.name + ' album cover'}
+						style={
+							count === 1
+							? { width: '20rem' }
+							: { width: '10rem' }
+						}
+					/>
+				</Col>
 
-				<Col>
-					{ count === 1 && window.innerWidth < 770
-						? <Card.Img
-								src={track.album.images[1].url}
-								alt={track.album.name + ' album cover'}
-								style={{
-									maxWidth: '30rem'
-								}}
-							/>
-						: ''
-					}
-					<Card.Body>
-						<Card.Title className='pb-3'>
+				<Col
+					xs={ count === 1 ? 12 : 6 }
+					md={6}
+				>
+					<Card.Body
+						className={
+							count === 1
+							? 'pt-5'
+							: ''
+						}
+					>
+						<Card.Title>
 							{track.name}
 						</Card.Title>
 
-						<Card.Subtitle className='pb-3'>
+						<Card.Subtitle>
 							<strong>
 								{track.artists[0].name}
 							</strong>
@@ -61,7 +65,7 @@ export default function Track({ trackDetails, count }) {
 							{track.album.name}
 						</Card.Text>
 
-						<Card.Text className='track-date'>
+						<Card.Text>
 							<em>
 								{ track.album.release_date && formatDate(track.album.release_date) }
 							</em>
