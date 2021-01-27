@@ -30,7 +30,7 @@ export default function PrivateHeader() {
 			variant='dark'
 			className='w-100 __dml header private'
 			sticky='top'
-			expand='lg'
+			expand='sm'
 			collapseOnSelect
 		>
 			<Navbar.Brand href='#home'>
