@@ -28,6 +28,7 @@ export default function Homepage() {
 					T.Dugan
 				</a>
 			</p>
+
 			<Container className='d-flex
 					align-items-center
 					justify-content-center'
@@ -38,10 +39,10 @@ export default function Homepage() {
 						maxWidth: '750px'
 					}}
 				>
-					<Card.Header className='bnt-header' id='bnt-header'>Best Tracks of 2020</Card.Header>
+					<Card.Header className='bnt-header' id='bnt-header'>What We're Listening To</Card.Header>
 
 					<Card.Body className='card-body-bnt'>
-						<Tracks playlist='40anMtgzQoKGiqvz7GQcFP' />
+						<Tracks playlist='6MeJe1F5CO3ybwA2a0Q64U' />
 					</Card.Body>
 				</Card>
 			</Container>
@@ -56,10 +57,10 @@ export default function Homepage() {
 						maxWidth: '750px'
 					}}
 				>
-					<Card.Header className='bnt-header' id='bnt-header'>What We're Listening To</Card.Header>
+					<Card.Header className='bnt-header' id='bnt-header'>Best Tracks of 2020</Card.Header>
 
 					<Card.Body className='card-body-bnt'>
-						<Tracks playlist='6MeJe1F5CO3ybwA2a0Q64U' />
+						<Tracks playlist='40anMtgzQoKGiqvz7GQcFP' />
 					</Card.Body>
 				</Card>
 			</Container>

@@ -48,10 +48,7 @@ export default function Tracks(props) {
 						<Track
 							key={details.track.id}
 							trackDetails={details}
-							imageSize={ count > 1
-								? 'secondary'
-								: 'first'
-							}
+							count={count}
 						/>
 					</div>
 				})

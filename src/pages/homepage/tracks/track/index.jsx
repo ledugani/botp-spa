@@ -3,7 +3,7 @@ import { Card, Row, Col } from 'react-bootstrap';
 import { formatDate } from '../../../../modules/dates';
 import './styles.css';
 
-export default function Track({ trackDetails, imageSize }) {
+export default function Track({ trackDetails, count }) {
 
 	const track = trackDetails.track;
 
@@ -13,23 +13,34 @@ export default function Track({ trackDetails, imageSize }) {
 		<Card
 			className='pb-5'
 		>
-			<Row>
-				<Col>
-					<Card.Img
-						src={track.album.images[1].url}
-						alt={track.album.name + ' album cover'}
-						className={imageSize}
-					/>
-				</Col>
+
+			{
+				count !== 1 && <hr />
+			}
+
+			<Row className='pt-5'>
+				{ window.innerWidth > 770 || count !== 1
+					? <Col>
+							<Card.Img
+								src={track.album.images[1].url}
+								alt={track.album.name + ' album cover'}
+							/>
+						</Col>
+					: ''
+				}
 
 				<Col>
-					<Card.Body
-						// className={
-						// 	trackCharLength.length > 100
-						// 	? 'song-details lg'
-						// 	: 'song-details'
-						// }
-					>
+					{ count === 1 && window.innerWidth < 770
+						? <Card.Img
+								src={track.album.images[1].url}
+								alt={track.album.name + ' album cover'}
+								style={{
+									maxWidth: '30rem'
+								}}
+							/>
+						: ''
+					}
+					<Card.Body>
 						<Card.Title className='pb-3'>
 							{track.name}
 						</Card.Title>
@@ -59,6 +70,7 @@ export default function Track({ trackDetails, imageSize }) {
 				</Col>
 
 			</Row>
+
 		</Card>
 	)
 }
