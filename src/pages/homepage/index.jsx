@@ -16,7 +16,7 @@ export default function Homepage() {
 		<>
 			<Seo title='Home' />
 			<h1 className='botp-heading'>hello, welcome to</h1>
-			<img src={logo} alt='botp logo' className='botp-logo'/>
+			<img src={logo} alt='botp logo' className={ window.innerWidth > 400 ? 'botp-logo' : 'botp-logo mb-1' }/>
 			<p className='botp-intro pb-5'>
 				a music discovery platform,
 				digital art gallery and shoppe developed by
@@ -38,21 +38,13 @@ export default function Homepage() {
 				</Card.Body>
 			</Card>
 
-			<div className='best-new-tracks'>
+			<Card className='best-new-tracks mt-5'>
+				<Card.Header className='bnt-header' id='bnt-header'>What We're Listening To</Card.Header>
 
-				<h2 className='bnt-header'>Best Tracks of 2020</h2>
-
-				<Tracks playlist='40anMtgzQoKGiqvz7GQcFP' />
-
-			</div>
-
-			<div className='best-new-tracks mt-5'>
-
-				<h2 className='bnt-header'>What We're Listening To</h2>
-
-				<Tracks playlist='6MeJe1F5CO3ybwA2a0Q64U' />
-
-			</div>
+				<Card.Body className='card-body-bnt'>
+					<Tracks playlist='6MeJe1F5CO3ybwA2a0Q64U' />
+				</Card.Body>
+			</Card>
 
 			<div className='additional-info'>
 				<p className='stay-tuned'>

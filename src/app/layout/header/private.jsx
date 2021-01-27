@@ -30,6 +30,8 @@ export default function PrivateHeader() {
 			variant='dark'
 			className='w-100 __dml header private'
 			sticky='top'
+			expand='sm'
+			collapseOnSelect
 		>
 			<Navbar.Brand href='#home'>
 				<img
@@ -41,52 +43,56 @@ export default function PrivateHeader() {
 				/>
 			</Navbar.Brand>
 
-			<Nav className='mr-auto'>
-				<Nav.Link href='/'>Home</Nav.Link>
+			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-				<Nav.Link href='/dashboard'>Dashboard</Nav.Link>
+			<Navbar.Collapse id="responsive-navbar-nav">
+				<Nav className='mr-auto'>
+					<Nav.Link href='/'>Home</Nav.Link>
 
-				<Nav.Link href='/artist-finder'>Find Artists</Nav.Link>
+					<Nav.Link href='/dashboard'>Dashboard</Nav.Link>
 
-				{/* <Nav.Link href='/merch'>Merch</Nav.Link>
+					<Nav.Link href='/artist-finder'>Find Artists</Nav.Link>
 
-				<Nav.Link href='/cart'>
-					Cart:
-					({
-						cartItems !== undefined
-						? cartItems.reduce((acc, item) => acc + item.qty, 0)
-						: ' '
-					})
-				</Nav.Link> */}
-			</Nav>
+					{/* <Nav.Link href='/merch'>Merch</Nav.Link>
 
-			<Nav className='justify-content-end'>
-				<Nav.Item className='greeting pr-3'>
-					<Row noGutters className='pt-2'>
-						<Col>
-							<p className='mb-0'>Howdy, </p>
-						</Col>
+					<Nav.Link href='/cart'>
+						Cart:
+						({
+							cartItems !== undefined
+							? cartItems.reduce((acc, item) => acc + item.qty, 0)
+							: ' '
+						})
+					</Nav.Link> */}
+				</Nav>
 
-						<Col>
-							<Nav.Link href='/profile' className='pt-0 pr-0'>
-								{ currentUser.displayName }
-							</Nav.Link>
-						</Col>
+				<Nav className='justify-content-end'>
+					<Nav.Item className='greeting pr-3'>
+						<Row noGutters className='pt-2'>
+							<Col>
+								<p className='mb-0'>Howdy, </p>
+							</Col>
 
-						<Col>
-							<p>!</p>
-						</Col>
-					</Row>
-				</Nav.Item>
+							<Col>
+								<Nav.Link href='/profile' className='pt-0 pr-0'>
+									{ currentUser.displayName }
+								</Nav.Link>
+							</Col>
 
-				<Nav.Item>
-					<Nav.Link onClick={handleLogout}>
-	 				Log Out
-					</Nav.Link>
-				</Nav.Item>
+							<Col>
+								<p>!</p>
+							</Col>
+						</Row>
+					</Nav.Item>
 
-				{error && <Nav.Item>{error}</Nav.Item>}
-			</Nav>
+					<Nav.Item>
+						<Nav.Link onClick={handleLogout}>
+						Log Out
+						</Nav.Link>
+					</Nav.Item>
+
+					{error && <Nav.Item>{error}</Nav.Item>}
+				</Nav>
+			</Navbar.Collapse>
 		</Navbar>
 	);
 }
