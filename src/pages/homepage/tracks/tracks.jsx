@@ -44,7 +44,7 @@ export default function Tracks(props) {
 				className='items-carousel'
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
-        numberOfCards={ window.innerWidth > 375 ? 4 : 2 }
+        numberOfCards={ window.innerWidth > 400 ? 4 : 2 }
         gutter={0}
         leftChevron={
 					<Button
