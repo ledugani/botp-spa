@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Credentials } from '../../../spotify/Credentials';
-import ItemsCarousel from 'react-items-carousel';
 import loading from '../../img/specs.gif';
 import { Button } from 'react-bootstrap';
 import Track from './track';
@@ -11,7 +10,6 @@ import './styles.css';
 export default function Tracks(props) {
 	const spotify = Credentials();
 	const [tracks, setTracks] = useState([]);
-	const [activeItemIndex, setActiveItemIndex] = useState(0);
 	let count = 0;
 
 	useEffect(() => {
@@ -41,40 +39,12 @@ export default function Tracks(props) {
 
 	return (
 		<>
-			{/* <ItemsCarousel
-				className='items-carousel'
-        requestToChangeActive={setActiveItemIndex}
-        activeItemIndex={activeItemIndex}
-        numberOfCards={ window.innerWidth > 400 ? 4 : 2 }
-        gutter={0}
-        leftChevron={
-					<Button
-						variant='light'
-						className='carousel-button left-btn'
-					>
-						{'<'}
-					</Button>
-				}
-        rightChevron={
-					<Button
-						variant='light'
-						className='carousel-button right-btn'
-					>
-						{'>'}
-					</Button>
-				}
-        outsideChevron
-				chevronWidth={20}
-				infiniteLoop={true}
-				slidesToScroll={2}
-      > */}
 			{
 				tracks && tracks.listOfTracksFromAPI
 				? tracks.listOfTracksFromAPI.map((details) => {
 					count++;
 
 					return <div key={details.added_at} className='single-track'>
-
 						<Track
 							key={details.track.id}
 							trackDetails={details}
@@ -83,8 +53,6 @@ export default function Tracks(props) {
 								: 'first'
 							}
 						/>
-
-
 					</div>
 				})
 				: <div className='loading'>
@@ -96,7 +64,6 @@ export default function Tracks(props) {
 						Rendering...
 					</div>
 			}
-			{/* </ItemsCarousel> */}
 		</>
 	);
 }
