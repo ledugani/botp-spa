@@ -44,6 +44,19 @@ export default function Homepage() {
 					<Card.Body className='card-body-bnt'>
 						<Tracks playlist='6MeJe1F5CO3ybwA2a0Q64U' />
 					</Card.Body>
+
+					<Card.Footer
+						className='text-center'
+					>
+						<a
+							href='https://open.spotify.com/playlist/6MeJe1F5CO3ybwA2a0Q64U'
+							target='_blank'
+							rel="noreferrer"
+							style={{
+								color: 'var(--botp-champagne)'
+							}}
+						>See the whole playlist...</a>
+					</Card.Footer>
 				</Card>
 			</Container>
 
@@ -57,11 +70,30 @@ export default function Homepage() {
 						maxWidth: '750px'
 					}}
 				>
-					<Card.Header className='bnt-header' id='bnt-header'>Best Tracks of 2020</Card.Header>
+					<Card.Header
+						className='bnt-header'
+						id='bnt-header'
+					>
+						Best Tracks of 2020
+					</Card.Header>
 
 					<Card.Body className='card-body-bnt'>
 						<Tracks playlist='40anMtgzQoKGiqvz7GQcFP' />
 					</Card.Body>
+
+					<Card.Footer
+						className='text-muted text-center'
+					>
+						<a
+							href='https://open.spotify.com/playlist/40anMtgzQoKGiqvz7GQcFP'
+							target='_blank'
+							rel="noreferrer"
+							style={{
+								color: 'var(--botp-champagne)',
+								width: '100%'
+							}}
+						>See the whole playlist...</a>
+					</Card.Footer>
 				</Card>
 			</Container>
 

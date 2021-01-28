@@ -1,7 +1,7 @@
 .card {
 	border: none !important;
 	word-wrap: normal !important;
-	background-color: transparent !important;
+	background-color: var(--xanadu) !important;
 }
 
 .secondary {
