@@ -18,24 +18,24 @@ export default function Track({ trackDetails, count }) {
 				count !== 1 && <hr />
 			}
 
-			<Row className='pt-5'>
+			<Row
+				className={
+					count !== 1 && 'pt-5'
+				}
+			>
 				<Col
-					xs={ count === 1 ? 12 : 6 }
+					xs={ count === 1 ? 12 : 4 }
 					md={6}
 				>
 					<Card.Img
 						src={track.album.images[1].url}
 						alt={track.album.name + ' album cover'}
-						style={
-							count === 1
-							? { width: '20rem' }
-							: { width: '10rem' }
-						}
+						style={{ width: '100%' }}
 					/>
 				</Col>
 
 				<Col
-					xs={ count === 1 ? 12 : 6 }
+					xs={ count === 1 ? 12 : 8 }
 					md={6}
 				>
 					<Card.Body
@@ -44,28 +44,36 @@ export default function Track({ trackDetails, count }) {
 							? 'pt-5'
 							: ''
 						}
+						style={{
+							padding: '0px'
+						}}
 					>
-						<Card.Title>
-							{track.name}
+						<Card.Title
+							style={
+								count !== 1
+								? { fontSize: '15px' }
+								: { }
+							}
+						>
+							<strong>{track.name}</strong>
 						</Card.Title>
 
 						<Card.Subtitle>
-							<strong>
-								{track.artists[0].name}
-							</strong>
+							<em>{track.artists[0].name}</em>
 						</Card.Subtitle>
 
 						<Card.Text
 							className={
-							trackCharLength.length > 100
-							? ' '
-							: 'pb-3'
-						}
+								trackCharLength.length > 100
+								? ' '
+								: 'pb-3'
+							}
+							style={{
+								fontSize: '13px'
+							}}
 						>
 							{track.album.name}
-						</Card.Text>
-
-						<Card.Text>
+							<br />
 							<em>
 								{ track.album.release_date && formatDate(track.album.release_date) }
 							</em>
