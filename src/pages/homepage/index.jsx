@@ -39,7 +39,12 @@ export default function Homepage() {
 						maxWidth: '750px'
 					}}
 				>
-					<Card.Header className='bnt-header' id='bnt-header'>What We're Listening To</Card.Header>
+					<Card.Header
+						className='bnt-header text-center'
+						id='bnt-header'
+					>
+						What We're Listening To
+					</Card.Header>
 
 					<Card.Body className='card-body-bnt'>
 						<Tracks playlist='6MeJe1F5CO3ybwA2a0Q64U' />
@@ -71,7 +76,7 @@ export default function Homepage() {
 					}}
 				>
 					<Card.Header
-						className='bnt-header'
+						className='bnt-header text-center'
 						id='bnt-header'
 					>
 						Best Tracks of 2020

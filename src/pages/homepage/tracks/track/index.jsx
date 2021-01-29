@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Card, Row, Col } from 'react-bootstrap';
 import { formatDate } from '../../../../modules/dates';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
@@ -11,34 +11,13 @@ export default function Track({ trackDetails, count }) {
 	const track = trackDetails.track;
 	// const trackCharLength = track.album.name + track.name + track.artists[0].name + track.album.name + track.album.release_date;
 
-	const renderTooltip = (props) => (
-		<Tooltip
-			id='button-tooltip'
-			{...props}
-		>
-			<a
-				href={track.external_urls.spotify}
-				target='_blank'
-				rel='noreferrer'
-				className='social-icon'
-			>
-				<FontAwesomeIcon
-					icon={faSpotify}
-					size={ count === 1 ? '3x' : '2x'}
-				/>
-			</a>
-		</Tooltip>
-	);
-
 	return (
 		<Card
 			className='pb-5'
 		>
-
 			{
 				count !== 1 && <hr />
 			}
-
 			<Row
 				className={
 					count !== 1 ? 'pt-5' : 'pt-3'
@@ -48,18 +27,27 @@ export default function Track({ trackDetails, count }) {
 					xs={ count === 1 ? 12 : 4 }
 					md={ count === 1 ? 6 : 4 }
 				>
-					<OverlayTrigger
-						offset={[0, 0]}
-						delay={{ show: 250, hide: 400 }}
-						overlay={renderTooltip}
-					>
+					<Card className='bottomlayer'>
 						<Card.Img
 							src={track.album.images[1].url}
 							alt={track.album.name + ' album cover'}
 							style={{ width: '100%' }}
-							className='pl-5'
+							className='pl-5 image'
 						/>
-					</OverlayTrigger>
+						<Card.Body className='midlayer'>
+							<a
+								href={track.external_urls.spotify}
+								target='_blank'
+								rel='noreferrer'
+								className='social-icon toplayer'
+							>
+								<FontAwesomeIcon
+									icon={faSpotify}
+									size={ count === 1 ? '3x' : '2x'}
+								/>
+							</a>
+						</Card.Body>
+					</Card>
 				</Col>
 
 				<Col
