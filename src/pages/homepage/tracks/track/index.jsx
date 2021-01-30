@@ -25,9 +25,13 @@ export default function Track({ trackDetails, count }) {
 			>
 				<Col
 					xs={ count === 1 ? 12 : 4 }
-					md={ count === 1 ? 6 : 4 }
+					md={ count === 1 ? 6 : 5 }
+					className='pl-5'
 				>
-					<Card className='bottomlayer'>
+					<Card className='bottomlayer' style={{
+				border: '1px solid black',
+				padding: '5px'
+			}}>
 						<Card.Img
 							src={track.album.images[1].url}
 							alt={track.album.name + ' album cover'}
@@ -43,7 +47,7 @@ export default function Track({ trackDetails, count }) {
 							>
 								<FontAwesomeIcon
 									icon={faSpotify}
-									size={ count === 1 ? '3x' : '2x'}
+									size={ count === 1 ? '3x' : '2x' }
 								/>
 							</a>
 						</Card.Body>
@@ -52,17 +56,14 @@ export default function Track({ trackDetails, count }) {
 
 				<Col
 					xs={ count === 1 ? 12 : 8 }
-					md={ count === 1 ? 6 : 8 }
+					md={ count === 1 ? 6 : 7 }
 				>
 					<Card.Body
 						className={
 							count === 1
-							? 'pt-1'
-							: ''
+							? 'pl-5 pt-1'
+							: 'pl-5 pt-0'
 						}
-						style={{
-							padding: '0px'
-						}}
 					>
 						<Card.Title
 							style={

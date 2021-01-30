@@ -11,7 +11,7 @@ export default function SignUp() {
 	const history = useHistory();
 	const [error, setError] = useState('');
 	const [loading, setLoading] = useState('');
-	const { signup, currentUser } = useAuth();
+	const { signup } = useAuth();
 
 	async function handleSubmit(e) {
 		e.preventDefault();
@@ -72,7 +72,9 @@ export default function SignUp() {
 				</Card.Body>
 			</Card>
 
-			<div>
+			<div style={{
+				color: 'var(--xanadu)'
+			}}>
 				Already have an account? <Link to='/login'>Log In</Link>
 			</div>
 		</>
