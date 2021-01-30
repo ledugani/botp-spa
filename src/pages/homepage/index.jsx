@@ -2,7 +2,7 @@ import { faGithub, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-i
 import logo from '../img/botp-top-2020-variant-cream-outline.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { Card } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
 import Tracks from './tracks/tracks';
 import Seo from '../../app/seo';
 import React from 'react';
@@ -11,7 +11,6 @@ import './styles.css';
 library.add(faGithub, faTwitter, faInstagram);
 
 export default function Homepage() {
-
 	return (
 		<>
 			<Seo title='Home' />
@@ -30,21 +29,78 @@ export default function Homepage() {
 				</a>
 			</p>
 
-			<Card className='best-new-tracks mb-5'>
-				<Card.Header className='bnt-header' id='bnt-header'>Best Tracks of 2020</Card.Header>
+			<Container className='d-flex
+					align-items-center
+					justify-content-center'
+			>
+				<Card
+					className='best-new-tracks mb-5'
+					style={{
+						maxWidth: '750px'
+					}}
+				>
+					<Card.Header
+						className='bnt-header text-center'
+						id='bnt-header'
+					>
+						What We're Listening To
+					</Card.Header>
 
-				<Card.Body className='card-body-bnt'>
-					<Tracks playlist='40anMtgzQoKGiqvz7GQcFP' />
-				</Card.Body>
-			</Card>
+					<Card.Body className='card-body-bnt'>
+						<Tracks playlist='6MeJe1F5CO3ybwA2a0Q64U' />
+					</Card.Body>
 
-			<Card className='best-new-tracks mt-5'>
-				<Card.Header className='bnt-header' id='bnt-header'>What We're Listening To</Card.Header>
+					<Card.Footer
+						className='text-center'
+					>
+						<a
+							href='https://open.spotify.com/playlist/6MeJe1F5CO3ybwA2a0Q64U'
+							target='_blank'
+							rel="noreferrer"
+							style={{
+								color: 'var(--botp-champagne)'
+							}}
+						>See the whole playlist...</a>
+					</Card.Footer>
+				</Card>
+			</Container>
 
-				<Card.Body className='card-body-bnt'>
-					<Tracks playlist='6MeJe1F5CO3ybwA2a0Q64U' />
-				</Card.Body>
-			</Card>
+			<Container className='d-flex
+					align-items-center
+					justify-content-center'
+			>
+				<Card
+					className='best-new-tracks mt-5'
+					style={{
+						maxWidth: '750px'
+					}}
+				>
+					<Card.Header
+						className='bnt-header text-center'
+						id='bnt-header'
+					>
+						Best Tracks of 2020
+					</Card.Header>
+
+					<Card.Body className='card-body-bnt'>
+						<Tracks playlist='40anMtgzQoKGiqvz7GQcFP' />
+					</Card.Body>
+
+					<Card.Footer
+						className='text-muted text-center'
+					>
+						<a
+							href='https://open.spotify.com/playlist/40anMtgzQoKGiqvz7GQcFP'
+							target='_blank'
+							rel="noreferrer"
+							style={{
+								color: 'var(--botp-champagne)',
+								width: '100%'
+							}}
+						>See the whole playlist...</a>
+					</Card.Footer>
+				</Card>
+			</Container>
 
 			<div className='additional-info'>
 				<p className='stay-tuned'>
