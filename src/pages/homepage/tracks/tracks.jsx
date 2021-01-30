@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Credentials } from '../../../spotify/Credentials';
 import loading from '../../img/specs.gif';
-import { Button } from 'react-bootstrap';
 import Track from './track';
 import axios from 'axios';
 import './styles.css';
