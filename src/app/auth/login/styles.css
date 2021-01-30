@@ -6,7 +6,11 @@
 /* Links underneath login page */
 
 .modal-link {
-	color: var(--xanadu) !important;
+	color: var(--base-color) !important;
+}
+
+.signup-link {
+	color: var(--botp-green) !important;
 }
 
 .btn-primary {
