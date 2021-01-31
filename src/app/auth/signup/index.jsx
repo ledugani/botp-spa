@@ -43,6 +43,7 @@ export default function SignUp() {
 				d-flex
 				align-items-center
 				justify-content-center
+				mb-5
 			'
 			style={{ minHeight: '79.3vh' }}
 		>
@@ -52,10 +53,10 @@ export default function SignUp() {
 			>
 				<Card>
 					<Card.Header>
-						<h2 className='text-center mb-4'>Sign Up</h2>
+						<h2 className='text-center'>Sign Up</h2>
 					</Card.Header>
 
-					<Card.Body>
+					<Card.Body id='signup-body'>
 
 						{error && <Alert variant='danger'>{error}</Alert>}
 
@@ -84,67 +85,22 @@ export default function SignUp() {
 							<Link to='/forgot-password' className='modal-link'>Forgot Password?</Link>
 						</div>
 					</Card.Body>
+					<Card.Footer className='text-center pt-4'>
+						<p className='login-link'>
+							Already have an account?
+							<Link
+								to='/login'
+								className='login-link pl-2'
+								style={{
+									textDecoration: 'underline'
+								}}
+							>
+								Log In
+							</Link>
+						</p>
+					</Card.Footer>
 				</Card>
-
-				<div
-					className='text-center mt-3'
-				>
-					<p className='login-link'>
-						Already have an account?
-						<Link
-							to='/login'
-							className='login-link pl-2'
-							style={{
-								textDecoration: 'underline'
-							}}
-						>
-							Log In
-						</Link>
-					</p>
-				</div>
 			</div>
-
 		</Container>
-		// <>
-		// 	<Card>
-		// 		<Card.Body>
-		// 			<h2 className='text-center mb-4'>Sign Up</h2>
-
-		// 			{error && <Alert variant='danger'>{error}</Alert>}
-
-		// 			<Form onSubmit={handleSubmit}>
-		// 				<Form.Group id='email'>
-		// 					<Form.Label>Email: </Form.Label>
-		// 					<Form.Control type='email' ref={emailRef} required />
-		// 				</Form.Group>
-
-		// 				<Form.Group id='displayName'>
-		// 					<Form.Label>Username: </Form.Label>
-		// 					<Form.Control type='text' ref={displayNameRef} required />
-		// 				</Form.Group>
-
-		// 				<Form.Group id='password'>
-		// 					<Form.Label>Password: </Form.Label>
-		// 					<Form.Control type='password' ref={passwordRef} required />
-		// 				</Form.Group>
-
-		// 				<Form.Group id='password-confirm'>
-		// 					<Form.Label>Confirm Password: </Form.Label>
-		// 					<Form.Control type='password' ref={passwordConfirmRef} required />
-		// 				</Form.Group>
-
-		// 				<Button disabled={loading} className='w-100' type='submit'>
-		// 					Sign Up
-		// 				</Button>
-		// 			</Form>
-		// 		</Card.Body>
-		// 	</Card>
-
-		// 	<div style={{
-		// 		color: 'var(--xanadu)'
-		// 	}}>
-		// 		Already have an account? <Link to='/login'>Log In</Link>
-		// 	</div>
-		// </>
 	)
 }

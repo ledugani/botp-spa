@@ -14,6 +14,15 @@
 	color: var(--botp-green) !important;
 }
 
+.card {
+	border-radius: 5px !important;
+}
+
+.card-header {
+	border-top-left-radius: 5px !important;
+	border-top-right-radius: 5px !important;
+}
+
 .btn-primary {
 	background-color: var(--botp-blue) !important;
 	border-color: var(--botp-blue) !important;
@@ -22,4 +31,9 @@
 .card-header {
 	background-color: var(--botp-green) !important;
 	color: var(--base-color);
+}
+
+.card-footer {
+	background-color: var(--base-color) !important;
+	color: var(--botp-green);
 }
