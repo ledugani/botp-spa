@@ -39,7 +39,7 @@ export default function SignUp() {
 				style={{ minHeight: '79.3vh' }}
 			>
 				<div
-					className='w-100 bg-color pb-5'
+					className='w-100 bg-color'
 					style={{ maxWidth: '400px' }}
 				>
 					<Card>
@@ -74,9 +74,20 @@ export default function SignUp() {
 					</Card>
 
 					<div
-						className='text-center'
+						className='text-center mt-3'
 					>
-						Don't have an account? <Link to='/signup' className='modal-link'>Sign Up</Link>
+						<p className='signup-link'>
+							Don't have an account?
+							<Link
+								to='/signup'
+								className='signup-link pl-2'
+								style={{
+									textDecoration: 'underline'
+								}}
+							>
+								Sign Up
+							</Link>
+						</p>
 					</div>
 				</div>
 
