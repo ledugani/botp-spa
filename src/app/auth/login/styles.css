@@ -9,8 +9,18 @@
 	color: var(--base-color) !important;
 }
 
-.signup-link {
+.signup-link,
+.login-link {
 	color: var(--botp-green) !important;
+}
+
+.card {
+	border-radius: 5px !important;
+}
+
+.card-header {
+	border-top-left-radius: 5px !important;
+	border-top-right-radius: 5px !important;
 }
 
 .btn-primary {
@@ -21,4 +31,9 @@
 .card-header {
 	background-color: var(--botp-green) !important;
 	color: var(--base-color);
+}
+
+.card-footer {
+	background-color: var(--base-color) !important;
+	color: var(--botp-green);
 }

@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { Form, Button, Card, Alert } from 'react-bootstrap';
+import { Container, Form, Button, Card, Alert } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../Auth';
+import '../login/styles.css';
 
 export default function SignUp() {
 	const emailRef = useRef();
@@ -32,51 +33,78 @@ export default function SignUp() {
 		} catch {
 			setError('Failed to create an account')
 		}
-
 		setLoading(false);
 	}
 
 	return (
-		<>
-			<Card>
-				<Card.Body>
-					<h2 className='text-center mb-4'>Sign Up</h2>
+		<Container
+			className='
+				d-flex
+				align-items-center
+				justify-content-center
+				mb-5
+			'
+			style={{ minHeight: '79.3vh' }}
+		>
+			<div
+				className='w-100 bg-color'
+				style={{ maxWidth: '400px' }}
+			>
+				<Card>
+					<Card.Header>
+						<h2 className='text-center'>Sign Up</h2>
+					</Card.Header>
 
-					{error && <Alert variant='danger'>{error}</Alert>}
+					<Card.Body id='signup-body'>
 
-					<Form onSubmit={handleSubmit}>
-						<Form.Group id='email'>
-							<Form.Label>Email: </Form.Label>
-							<Form.Control type='email' ref={emailRef} required />
-						</Form.Group>
+						{error && <Alert variant='danger'>{error}</Alert>}
 
-						<Form.Group id='displayName'>
-							<Form.Label>Username: </Form.Label>
-							<Form.Control type='text' ref={displayNameRef} required />
-						</Form.Group>
+						<Form onSubmit={handleSubmit}>
+							<Form.Group id='email'>
+		 						<Form.Label>Email: </Form.Label>
+		 						<Form.Control className='w-100' type='email' ref={emailRef} required />
+			 				</Form.Group>
 
-						<Form.Group id='password'>
-							<Form.Label>Password: </Form.Label>
-							<Form.Control type='password' ref={passwordRef} required />
-						</Form.Group>
+							<Form.Group id='displayName'>
+								<Form.Label>Username: </Form.Label>
+								<Form.Control className='w-100' type='text' ref={displayNameRef} required />
+							</Form.Group>
 
-						<Form.Group id='password-confirm'>
-							<Form.Label>Confirm Password: </Form.Label>
-							<Form.Control type='password' ref={passwordConfirmRef} required />
-						</Form.Group>
+							<Form.Group id='password'>
+								<Form.Label>Password: </Form.Label>
+								<Form.Control className='w-100' type='password' ref={passwordRef} required />
+							</Form.Group>
 
-						<Button disabled={loading} className='w-100' type='submit'>
-							Sign Up
-						</Button>
-					</Form>
-				</Card.Body>
-			</Card>
+							<Form.Group id='password-confirm'>
+								<Form.Label>Confirm Password: </Form.Label>
+								<Form.Control type='password' ref={passwordConfirmRef} required />
+							</Form.Group>
 
-			<div style={{
-				color: 'var(--xanadu)'
-			}}>
-				Already have an account? <Link to='/login'>Log In</Link>
+							<Button disabled={loading} className='w-100' type='submit'>
+								Sign Up
+							</Button>
+						</Form>
+
+						<div className='w-100 text-center mt-3'>
+							<Link to='/forgot-password' className='modal-link'>Forgot Password?</Link>
+						</div>
+					</Card.Body>
+					<Card.Footer className='text-center pt-4'>
+						<p className='login-link'>
+							Already have an account?
+							<Link
+								to='/login'
+								className='login-link pl-2'
+								style={{
+									textDecoration: 'underline'
+								}}
+							>
+								Log In
+							</Link>
+						</p>
+					</Card.Footer>
+				</Card>
 			</div>
-		</>
+		</Container>
 	)
 }
