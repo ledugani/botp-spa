@@ -9,7 +9,8 @@
 	color: var(--base-color) !important;
 }
 
-.signup-link {
+.signup-link,
+.login-link {
 	color: var(--botp-green) !important;
 }
 
