@@ -33,7 +33,6 @@ export default function SignUp() {
 		} catch {
 			setError('Failed to create an account')
 		}
-
 		setLoading(false);
 	}
 
@@ -62,8 +61,13 @@ export default function SignUp() {
 
 						<Form onSubmit={handleSubmit}>
 							<Form.Group id='email'>
-								<Form.Label>Email: </Form.Label>
-								<Form.Control className='w-100' type='email' ref={emailRef} required />
+		 						<Form.Label>Email: </Form.Label>
+		 						<Form.Control className='w-100' type='email' ref={emailRef} required />
+			 				</Form.Group>
+
+							<Form.Group id='displayName'>
+								<Form.Label>Username: </Form.Label>
+								<Form.Control className='w-100' type='text' ref={displayNameRef} required />
 							</Form.Group>
 
 							<Form.Group id='password'>
