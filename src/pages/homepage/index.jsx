@@ -58,7 +58,7 @@ export default function Homepage() {
 							target='_blank'
 							rel="noreferrer"
 							style={{
-								color: 'var(--botp-champagne)'
+								color: 'var(--botp-green)'
 							}}
 						>See the whole playlist...</a>
 					</Card.Footer>
@@ -94,7 +94,7 @@ export default function Homepage() {
 							target='_blank'
 							rel="noreferrer"
 							style={{
-								color: 'var(--botp-champagne)',
+								color: 'var(--botp-green)',
 								width: '100%'
 							}}
 						>See the whole playlist...</a>

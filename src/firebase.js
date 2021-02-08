@@ -17,7 +17,7 @@ const firestore = app.firestore();
 export const auth = app.auth();
 
 export const database = {
-	artists: firestore.collection('artists')
+	users: firestore.collection('users'),
 }
 
 export default app;
