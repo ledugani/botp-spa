@@ -109,13 +109,14 @@ export default function ArtistFinder() {
 		}
 	}
 
-	function addToDB(e) {
-		e.preventDefault();
-
+	function addToDB() {
 		// Create
-		database.users.add({
-			artists: artists,
-			userId: currentUser.uid
+		// database.ref('/users/' + currentUser.uid).push({
+		// 	artists: artists
+		// });
+
+		database.users.doc(currentUser.uid).set({
+			artists: artists
 		})
 	}
 
