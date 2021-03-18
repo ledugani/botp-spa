@@ -16,6 +16,7 @@ export default function ArtistFinder() {
 	const [ playlist, setPlaylist ] = useState({ selectedPlaylist: '', listOfPlaylistsFromAPI: [] });
 	const [ tracks, setTracks ] = useState({ listOfTracksFromAPI: [] });
 	const [ artists, setArtists ] = useState({ selectedArtists: [] });
+	const { currentUser } = useAuth();
 
 	const spotify = Credentials();
 	const { logout } = useAuth();
@@ -108,17 +109,19 @@ export default function ArtistFinder() {
 		}
 	}
 
-	function addToDB(e) {
-		e.preventDefault();
-
+	function addToDB() {
 		// Create
-		database.artists.add({
+		// database.ref('/users/' + currentUser.uid).push({
+		// 	artists: artists
+		// });
+
+		database.users.doc(currentUser.uid).set({
 			artists: artists
 		})
 	}
 
 	return (
-		<Container>
+		<Container className='mb-5'>
 			<h1 className='mb-4'>Artist Finder</h1>
 			<Card className='dashboard'>
 				<Card.Header>Select Artist by Genre</Card.Header>

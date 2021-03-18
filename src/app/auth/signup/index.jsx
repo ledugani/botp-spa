@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Container, Form, Button, Card, Alert } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
+// import { database } from '../../../firebase';
 import { useAuth } from '../Auth';
 import '../login/styles.css';
 
@@ -35,6 +36,10 @@ export default function SignUp() {
 		}
 		setLoading(false);
 	}
+
+	// function createUser() {
+	// 	database.users.add(displayNameRef.current.value)
+	// }
 
 	return (
 		<Container
