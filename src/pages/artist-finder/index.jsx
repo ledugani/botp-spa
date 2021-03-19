@@ -110,13 +110,12 @@ export default function ArtistFinder() {
 	}
 
 	function addToDB() {
-		// Create
-		// database.ref('/users/' + currentUser.uid).push({
-		// 	artists: artists
-		// });
-
-		database.users.doc(currentUser.uid).set({
-			artists: artists
+		// make call to READ user saved artist bucket
+		database.users
+			.doc(currentUser.uid)
+			.update({ artists: artists.selectedArtists },{ merge:true })
+			.then(()=>{
+			console.log("Artists saved to your profile!");
 		})
 	}
 
