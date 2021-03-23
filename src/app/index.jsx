@@ -10,6 +10,7 @@ import ForgotPassword from './auth/pwreset';
 import Layout from './layout';
 import Homepage from '../pages/homepage';
 import AboutPage from '../pages/about';
+import SavedArtists from '../pages/saved-artists';
 // import MerchPage from '../pages/merch';
 // import CartPage from '../pages/cart';
 
@@ -24,6 +25,8 @@ export default function App() {
 						<PrivateRoute exact path='/dashboard' component={Dashboard} />
 
 						<PrivateRoute exact path='/artist-finder' component={ArtistFinder} />
+
+						<PrivateRoute exact path='/saved-artists' component={SavedArtists} />
 
 						{/* <PrivateRoute path='/merch' component={MerchPage} />
 

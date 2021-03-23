@@ -201,11 +201,14 @@ export default function ArtistFinder() {
 					<Modal.Title>Artists Saved Confirmation</Modal.Title>
 				</Modal.Header>
 
-				<Modal.Body>Alright, your selected artists have been saved!</Modal.Body>
+				<Modal.Body>Alright, your selected artists have been saved! You can reload the page to select more artists from a different playlist or view your selected artists.</Modal.Body>
 
 				<Modal.Footer>
 					<Button variant='secondary' onClick={handleClose}>
-						OK
+						My Artists
+					</Button>
+					<Button variant='primary' onClick={handleClose}>
+						New Search
 					</Button>
 				</Modal.Footer>
 			</Modal>
