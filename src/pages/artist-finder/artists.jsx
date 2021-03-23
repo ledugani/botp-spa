@@ -12,12 +12,12 @@ export default function Artists(props) {
 							// for more than one artist
 							? track.track.artists.map((artist) => {
 								return <Form.Check
-												key={artist.id}
-												type='checkbox'
-												label={artist.name}
-												value={artist.name}
-												onChange={event => props.onChange(event.target.value)}
-											/>
+											key={artist.id}
+											type='checkbox'
+											label={artist.name}
+											value={artist.name}
+											onChange={event => props.onChange(event.target.value)}
+										/>
 							})
 							//for only one artist
 							: <Form.Check

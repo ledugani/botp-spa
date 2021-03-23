@@ -30,8 +30,8 @@ export default function SavedArtistsPage() {
                 <h1>Your Saved Artists</h1>
                 <ul>
                     {
-                        artists.map((x) => {
-                            return <li key={x}>{x}</li>;
+                        artists.map((artist) => {
+                            return <li key={artist}>{artist}</li>;
                         })
                     }
                 </ul>
