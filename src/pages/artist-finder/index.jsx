@@ -205,7 +205,7 @@ export default function ArtistFinder() {
 
 				<Modal.Footer>
 					<Button variant='secondary' onClick={handleClose}>
-						Okay
+						OK
 					</Button>
 				</Modal.Footer>
 			</Modal>
