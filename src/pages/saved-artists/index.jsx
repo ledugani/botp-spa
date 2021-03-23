@@ -27,11 +27,14 @@ export default function SavedArtistsPage() {
 		<>
 			<Seo title='My Artists' />
 			<Container className='page-container'>
-                {
-                    artists.map((x) => {
-                        return x;
-                    })
-                }
+                <h1>Your Saved Artists</h1>
+                <ul>
+                    {
+                        artists.map((x) => {
+                            return <li key={x}>{x}</li>;
+                        })
+                    }
+                </ul>
 			</Container>
 		</>
 	);
