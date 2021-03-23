@@ -8,6 +8,9 @@ import Dropdown from './dropdown';
 import Artists from './artists';
 import axios from 'axios';
 import './styles.css';
+// import { Modal } from 'bootstrap';
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function ArtistFinder() {
 	const [ error, setError ] = useState('');
@@ -16,8 +19,12 @@ export default function ArtistFinder() {
 	const [ playlist, setPlaylist ] = useState({ selectedPlaylist: '', listOfPlaylistsFromAPI: [] });
 	const [ tracks, setTracks ] = useState({ listOfTracksFromAPI: [] });
 	const [ artists, setArtists ] = useState({ selectedArtists: [] });
-	const { currentUser } = useAuth();
+	const [show, setShow] = useState(false);
 
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+
+	const { currentUser } = useAuth();
 	const spotify = Credentials();
 	const { logout } = useAuth();
 	const history = useHistory();
@@ -110,13 +117,13 @@ export default function ArtistFinder() {
 	}
 
 	function addToDB() {
-		// Create
-		// database.ref('/users/' + currentUser.uid).push({
-		// 	artists: artists
-		// });
-
-		database.users.doc(currentUser.uid).set({
-			artists: artists
+		// make call to READ user saved artist bucket
+		database.users
+			.doc(currentUser.uid)
+			.update({ artists: artists.selectedArtists },{ merge:true })
+			.then(()=>{
+				// console.log("Artists saved to your profile!");
+				handleShow();
 		})
 	}
 
@@ -188,6 +195,20 @@ export default function ArtistFinder() {
 
 				{error && <Alert variant='danger'>{error}</Alert>}
 			</div>
+
+			<Modal show={show} onHide={handleShow} className='modal-box'>
+				<Modal.Header closeButton>
+					<Modal.Title>Artists Saved Confirmation</Modal.Title>
+				</Modal.Header>
+
+				<Modal.Body>Alright, your selected artists have been saved!</Modal.Body>
+
+				<Modal.Footer>
+					<Button variant='secondary' onClick={handleClose}>
+						OK
+					</Button>
+				</Modal.Footer>
+			</Modal>
 		</Container>
 	)
 }

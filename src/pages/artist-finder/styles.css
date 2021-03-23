@@ -10,3 +10,7 @@
 .dashboard-card {
 	background-color: var(--gunmetal);
 }
+
+.modal-box {
+	background-color: slategray;
+}
