@@ -19,7 +19,7 @@ export default function ArtistFinder() {
 	const [ playlist, setPlaylist ] = useState({ selectedPlaylist: '', listOfPlaylistsFromAPI: [] });
 	const [ tracks, setTracks ] = useState({ listOfTracksFromAPI: [] });
 	const [ artists, setArtists ] = useState({ selectedArtists: [] });
-	const [show, setShow] = useState(false);
+	const [ show, setShow ] = useState(false);
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
@@ -99,21 +99,22 @@ export default function ArtistFinder() {
 	}
 
 	const toggleArtist = (artist) => {
-		const chosenArtists = artists.selectedArtists;
-		const artistExists = chosenArtists.find((item) => item === artist);
+		// check if the value exists in the state already)
+		const artistExists = artists.selectedArtists.find((item) => item === artist);
 
-		// if (the checked value exists in the state already)
 		if (artistExists) {
 			// then remove that value from state
 			setArtists({
-				selectedArtists: [...chosenArtists.filter(item => item !== artist)]
+				selectedArtists: [...artists.selectedArtists.filter(item => item !== artist)]
 			});
 		} else {
-			// add artist to state
+			// otherwise add artist to state
 			setArtists({
-				selectedArtists: [...chosenArtists, artist]
+				selectedArtists: [...artists.selectedArtists, artist]
 			})
 		}
+
+		console.log(artist);
 	}
 
 	function addToDB() {
@@ -201,11 +202,14 @@ export default function ArtistFinder() {
 					<Modal.Title>Artists Saved Confirmation</Modal.Title>
 				</Modal.Header>
 
-				<Modal.Body>Alright, your selected artists have been saved!</Modal.Body>
+				<Modal.Body>Alright, your selected artists have been saved! You can reload the page to select more artists from a different playlist or view your selected artists.</Modal.Body>
 
 				<Modal.Footer>
 					<Button variant='secondary' onClick={handleClose}>
-						OK
+						My Artists
+					</Button>
+					<Button variant='primary' onClick={handleClose}>
+						New Search
 					</Button>
 				</Modal.Footer>
 			</Modal>
