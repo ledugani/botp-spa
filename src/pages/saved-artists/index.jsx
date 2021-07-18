@@ -32,11 +32,11 @@ export default function SavedArtistsPage() {
 		userRef.get().then((doc) => {
 			if (doc.exists) {
 
-				const rawArtists = doc.data().artists;
+				const artistsFromFb = doc.data().artists;
 
-				setArtists(rawArtists);
+				setArtists(artistsFromFb);
 
-				const artistsStringified = rawArtists.toString().replaceAll(',','%');
+				const artistsStringified = artistsFromFb.toString().replaceAll(',','%');
 
 				axios(`https://accounts.spotify.com/api/token`, {
 					headers: {
@@ -55,8 +55,8 @@ export default function SavedArtistsPage() {
 						console.log(res);
 					})
 				})
-			} else {
 				// doc.data() will be undefined in this case
+			} else {
 				console.log("No such document!");
 			}
 		}).catch((error) => {
