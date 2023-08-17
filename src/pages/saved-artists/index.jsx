@@ -10,7 +10,7 @@ import './styles.css';
 
 export default function SavedArtistsPage() {
     const [ artists, setArtists ] = useState([]);
-	//const [ userArtists, setUserArtists ] = useState([]);
+	// const [ userArtists, setUserArtists ] = useState([]);
     const [ error, setError ] = useState('');
     const { currentUser } = useAuth();
 	const userRef = database.users.doc(currentUser.uid);
@@ -62,7 +62,7 @@ export default function SavedArtistsPage() {
 		}).catch((error) => {
 			console.log("Error getting document:", error);
 		});
-	}, []);
+	}, [spotify.ClientId, spotify.ClientSecret, userRef]);
     
     return (
 		<>
