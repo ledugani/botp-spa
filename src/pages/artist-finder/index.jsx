@@ -113,8 +113,6 @@ export default function ArtistFinder() {
 				selectedArtists: [...artists.selectedArtists, artist]
 			})
 		}
-
-		// console.log(artist);
 	}
 
 	function addToDB() {

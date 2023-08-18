@@ -37,6 +37,7 @@ export default function SavedArtistsPage() {
 				setArtists(artistsFromFb);
 
 				const artistsStringified = artistsFromFb.toString().replaceAll(',','%');
+				console.log(artistsStringified);
 
 				axios(`https://accounts.spotify.com/api/token`, {
 					headers: {
@@ -46,8 +47,8 @@ export default function SavedArtistsPage() {
 					data: 'grant_type=client_credentials',
 					method: 'POST'
 				}).then((response) => {
-					console.log(response.data.access_token)
-					axios(`https://api.spotify.com/v1/artists?ids=${artistsStringified}`, {
+					// console.log(response.data.access_token)
+					axios(`https://cors-anywhere.herokuapp.com/https://api.spotify.com/v1/artists?ids=${artistsStringified}`, {
 						method: 'GET',
 						headers: {'Authorization' : 'Bearer ' + response.data.access_token}
 					})
@@ -73,7 +74,7 @@ export default function SavedArtistsPage() {
                     {
                         artists.map((artist) => {
                             return <li key={artist}>{artist}</li>;
-                        })                        
+                        })
                     }
                 </ul>
                 <div className='w-100 text-center mt-2'>
