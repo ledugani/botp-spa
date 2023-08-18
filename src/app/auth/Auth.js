@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { auth } from '../../firebase';
+import { auth, database } from '../../firebase';
 
 const AuthContext = React.createContext();
 
@@ -23,6 +23,12 @@ export function AuthProvider({ children }) {
 	function signup(email, password, username) {
 		return auth.createUserWithEmailAndPassword(email, password)
 		.then((result) => {
+			database.users
+			.doc(result.user.uid)
+			.set({
+				// uid: result.user.uid,
+				artists: [],
+			});
 			return result.user.updateProfile({
 				displayName: username
 			})

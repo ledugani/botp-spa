@@ -16,7 +16,7 @@ export default function Artists(props) {
 											type='checkbox'
 											label={artist.name}
 											value={artist.name}
-											onChange={event => props.onChange(event.target.value)}
+											onChange={ () => props.onChange(artist.id) }
 										/>
 							})
 							//for only one artist
@@ -25,7 +25,7 @@ export default function Artists(props) {
 									type='checkbox'
 									label={track.track.artists[0].name}
 									value={track.track.artists[0].name}
-									onChange={() => props.onChange(track.track.id)}
+									onChange={ () => props.onChange(track.track.artists[0].id) }
 								/>
 						}
 					</Form.Group>

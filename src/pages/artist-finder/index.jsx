@@ -113,12 +113,11 @@ export default function ArtistFinder() {
 				selectedArtists: [...artists.selectedArtists, artist]
 			})
 		}
-
-		console.log(artist);
 	}
 
 	function addToDB() {
-		// make call to READ user saved artist bucket
+		// make call to WRITE user saved artist bucket
+		// console.log(currentUser);
 		database.users
 			.doc(currentUser.uid)
 			.update({ artists: artists.selectedArtists },{ merge:true })

@@ -9,25 +9,14 @@ import axios from 'axios';
 import './styles.css';
 
 export default function SavedArtistsPage() {
-    const [artists, setArtists] = useState([]);
+    const [ artists, setArtists ] = useState([]);
+	// const [ userArtists, setUserArtists ] = useState([]);
     const [ error, setError ] = useState('');
     const { currentUser } = useAuth();
 	const userRef = database.users.doc(currentUser.uid);
 	const spotify = Credentials();
 	const { logout } = useAuth();
 	const history = useHistory();
-    
-    userRef.get().then((doc) => {
-        if (doc.exists) {
-            setArtists(doc.data().artists);
-            // console.log("Document data:", doc.data());
-        } else {
-            // doc.data() will be undefined in this case
-            console.log("No such document!");
-        }
-    }).catch((error) => {
-        console.log("Error getting document:", error);
-    });
 
     async function handleLogout() {
 		setError('');
@@ -40,23 +29,42 @@ export default function SavedArtistsPage() {
 	}
 
     useEffect(() => {
-		axios(`https://accounts.spotify.com/api/token`, {
-			headers: {
-				'Content-Type' : 'application/x-www-form-urlencoded',
-				'Authorization' : 'Basic ' + btoa(spotify.ClientId + ':' + spotify.ClientSecret)
-			},
-			data: 'grant_type=client_credentials',
-			method: 'POST'
-		}).then((response) => {
-			axios(`https://api.spotify.com/v1/artists?ids=4B3sBWHD5rfWtkXCdYwrFq`, {
-				method: 'GET',
-				headers: { 'Authorization' : 'Bearer ' + response.data.access_token}
-			})
-			.then((response) => {
-				console.log(response);
-			})
-		})
-	}, [spotify.ClientId, spotify.ClientSecret]);
+		userRef.get().then((doc) => {
+			if (doc.exists) {
+				const artistsFromFb = doc.data().artists;
+
+				setArtists(artistsFromFb);
+
+				// console.log(artistsFromFb);
+
+				const artistsStringified = artistsFromFb.toString().replaceAll(',','%2C');
+				console.log(artistsStringified);
+
+				axios(`https://accounts.spotify.com/api/token`, {
+					headers: {
+						'Content-Type' : 'application/x-www-form-urlencoded',
+						'Authorization' : 'Basic ' + btoa(spotify.ClientId + ':' + spotify.ClientSecret)
+					},
+					data: 'grant_type=client_credentials',
+					method: 'POST'
+				}).then((response) => {
+					// console.log(response.data.access_token)
+					axios(`https://cors-anywhere.herokuapp.com/https://api.spotify.com/v1/artists?ids=${artistsStringified}`, {
+						method: 'GET',
+						headers: {'Authorization' : 'Bearer ' + response.data.access_token}
+					})
+					.then((res) => {
+						console.log(res);
+					})
+				})
+				// doc.data() will be undefined in this case
+			} else {
+				console.log("No such document!");
+			}
+		}).catch((error) => {
+			console.log("Error getting document:", error);
+		});
+	}, [spotify.ClientId, spotify.ClientSecret, userRef]);
     
     return (
 		<>
@@ -68,8 +76,6 @@ export default function SavedArtistsPage() {
                         artists.map((artist) => {
                             return <li key={artist}>{artist}</li>;
                         })
-
-                        
                     }
                 </ul>
                 <div className='w-100 text-center mt-2'>
