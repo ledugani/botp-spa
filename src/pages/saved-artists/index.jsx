@@ -31,12 +31,13 @@ export default function SavedArtistsPage() {
     useEffect(() => {
 		userRef.get().then((doc) => {
 			if (doc.exists) {
-
 				const artistsFromFb = doc.data().artists;
 
 				setArtists(artistsFromFb);
 
-				const artistsStringified = artistsFromFb.toString().replaceAll(',','%');
+				// console.log(artistsFromFb);
+
+				const artistsStringified = artistsFromFb.toString().replaceAll(',','%2C');
 				console.log(artistsStringified);
 
 				axios(`https://accounts.spotify.com/api/token`, {
